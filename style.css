@@ -1,0 +1,35 @@
+.head{
+    background-image: linear-gradient(to right,#f4e4a4,white);
+    font-family: Font,backupFont;
+    padding-top: 0.5vh;
+    padding-left: 0.25vw;
+    padding-bottom: 0.5vh;
+    padding-right: 0.25vw;
+    width: 100%;
+    height: 4vh;
+}
+.headText{
+    padding-left: 1vw;
+    margin-top: 0.75vh;
+    font-size: 2vh;
+}
+.mainContent{
+    font-family: Font;
+}
+.mainContent p{
+    font-family: Font;
+    margin-left: 1vw;
+}
+body{
+    margin: 0;
+    padding: 0;
+    overflow: hidden scroll;
+}
+@font-face {
+    font-family: "Font";
+    src: url(HOOTRG.TTF);
+}
+@font-face {
+    font-family: "backupFont";
+    src: url(backupFont.TTC);
+}
