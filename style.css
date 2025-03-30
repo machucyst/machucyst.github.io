@@ -15,7 +15,7 @@
 }
 #buttons{  
     margin-left: auto;
-    margin-right: auto;
+    margin-right: 2vh;
     transition: 1s;
     padding-left: auto;
     padding-right: auto;
@@ -28,19 +28,10 @@
 #buttonsts{
     margin: 0;
     padding: 0;
-    margin-left: auto;
-    margin-right: 4vw;
+    margin-left: 15%;
+    margin-right: 0.5%;
     width: fit-content;
-    transition: 0.5s;
-}
-#loading{
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    top:0;
-    left:0;
-    background-color: black;
-    transition: 2s;
+    transition: 1s ease-in-out;
 }
 .headText{
     padding-left: 1vw;
@@ -50,7 +41,33 @@
     line-height: normal;
     margin-bottom: auto;
     margin-right: auto;
+    transition: 0.5s ease-in-out;
 }
+#placeholder{
+    visibility: hidden !important;
+    width: 2vh;
+    height: 2vh;
+}
+@media (max-width:768px){
+    #buttonsts{
+        /* margin-right: %; */
+        margin-left: 7ww.5%;
+    }
+    .headText{
+        margin-right: 2vw;
+    }
+}
+
+#loading{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top:0;
+    left:0;
+    background-color: black;
+    transition: 2s ease-out;
+}
+
 .head div{
     padding-left: 1vw;
     padding-top: 0.5vh;
@@ -64,7 +81,6 @@
     margin-right: 2vw;
 }
 .bts{
-    width: 1vw;
     height: 4vh;
     margin-top: 0;
     font-family: Font;
@@ -74,7 +90,8 @@
     background-color: #e7f4c8;
     /* padding-bottom: 2vh;
     padding-top: 2vh; */
-    min-width: 5vw;
+    min-width: fit-content;
+    width: 5vw;
     border-radius: 2vh;
     transition: all 0.1s ease-in-out;
     margin-left: 0.125vw;
@@ -97,7 +114,8 @@
     top:0;
     right:0;
     border-radius: 1vh;
-    margin-top: 1vh;
+    margin-top: 0.5vh;
+    margin-bottom: auto;
     margin-right: 0.5vw;
     margin-left: 0.1vw;
     position: absolute;
