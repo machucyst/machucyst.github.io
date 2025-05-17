@@ -4,7 +4,7 @@ function isMobile(){
 if (isMobile()){
     // document.getElementById("buttonsts").style.marginLeft = "9vw"
 }
-document.addEventListener("DOMContentLoaded", function(){
+window.addEventListener("load", function(){
     document.getElementById("loading").style.backgroundColor = "#00000000"
     document.getElementById("loading").style.visibility = "collapse"
     if (isMobile()){
