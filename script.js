@@ -11,7 +11,13 @@ document.addEventListener("DOMContentLoaded", function(){
         document.getElementById("buttons").style.marginRight = "12.5%"
     }
 })
-
+let headtext = document.getElementById("headText")
+headtext.addEventListener('mouseover',function(){
+    headtext.innerHTML = "daz me, the cyst"
+})
+headtext.addEventListener('mouseleave',function(){
+    headtext.innerHTML = "machucyst"
+})
 
 let button = [  (document.getElementById("code")),
                 (document.getElementById("code1")),
@@ -30,7 +36,7 @@ window.addEventListener("resize",function(){
         document.getElementById("headText").style.marginRight = "5%"
         // x=true
     }
-    
+
     
 })
 document.getElementById("showb").addEventListener("click",function(){
