@@ -1,6 +1,6 @@
 .head{
     background-image: linear-gradient(to right,#f4e4a4,#00000000);
-    font-family: Font,backupFont;
+    
     padding-top: 0.5vh;
     padding-left: 0.25vw;
     /* padding-bottom: 0.5vh; */
@@ -12,6 +12,9 @@
     max-height: 10%;
     display: flex;
     text-align: normal;
+}
+body{
+    font-family: Romaji,Japanese;
 }
 #buttons{  
     margin-left: auto;
@@ -84,7 +87,6 @@
 .bts{
     height: 4vh;
     margin-top: 0;
-    font-family: Font;
     border-color: #f4e4a4;
     border-style: solid;
     border-width: 2px;
@@ -104,7 +106,6 @@
 #showb{
     width: 4vh;
     height: 4vh;
-    font-family: Font;
     border-color: #f4e4a4;
     border-style: solid;
     border-width: 2px;
@@ -133,7 +134,6 @@
     scale: 1.1; 
 }
 .mainContent{
-    font-family: Font;
     margin-left: 10vw;
     margin-right: 10vw;
     background-color: rgb(151, 151, 151);
@@ -143,14 +143,12 @@
     width:auto;
 }
 .mainContent div{
-    font-family: Font;
     padding-left: 1vw;
     padding-right: 1vh;
     padding-top: 1vh;
     padding-bottom:1vh
 }
 .mainContent div p{
-    font-family: Font;
     margin-top: 1vw;
 }
 body{
@@ -162,10 +160,10 @@ body{
     background-size: cover;
 }
 @font-face {
-    font-family: "Font";
-    src: url(HOOTRG.TTF);
+    font-family: "Romaji";
+    src: url(QUICKSAND-MEDIUM.TTF);
 }
 @font-face {
-    font-family: "backupFont";
-    src: url(backupFont.TTC);
+    font-family: "Japanese";
+    src: url(BIZ-UDGOTHICB.TTC);
 }

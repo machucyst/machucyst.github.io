@@ -24,7 +24,7 @@ let button = [  (document.getElementById("code")),
                 (document.getElementById("code2")),
             ]
 button[0].style.backgroundColor = "#d9f0a5"
-let texts = ["i like not doing anything","i run rx 6600 ye","this is just a side project<br>what else do you expect from a lazy ass<br><br>the font is hooteroll if you're interested"]
+let texts = ["i like not doing anything","i run rx 6600 ye","this is just a side project<br>what else do you expect from a lazy ass<br><br>the font is Quicksand if you're interested"]
 let textBox = document.getElementById("textbox")
 
 x = !isMobile()
