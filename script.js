@@ -1,15 +1,9 @@
-function isMobile(){
-    return window.innerWidth<=768
-}
-if (isMobile()){
-    // document.getElementById("buttonsts").style.marginLeft = "9vw"
-}
 window.addEventListener("load", function(){
     document.getElementById("loading").style.backgroundColor = "#00000000"
     document.getElementById("loading").style.visibility = "collapse"
-    if (isMobile()){
-        document.getElementById("buttons").style.marginRight = "12.5%"
-    }
+    // if (isMobile()){
+    //     document.getElementById("buttons").style.marginRight = "12.5%"
+    // }
 })
 let headtext = document.getElementById("headText")
 headtext.addEventListener('mouseover',function(){
@@ -18,56 +12,43 @@ headtext.addEventListener('mouseover',function(){
 headtext.addEventListener('mouseleave',function(){
     headtext.innerHTML = "machucyst"
 })
-
-let button = [  (document.getElementById("code")),
-                (document.getElementById("code1")),
-                (document.getElementById("code2")),
-            ]
-button[0].style.backgroundColor = "#d9f0a5"
-let texts = ["i like not doing anything","i run rx 6600 ye","this is just a side project<br>what else do you expect from a lazy ass<br><br>the font is Quicksand if you're interested"]
-let textBox = document.getElementById("textbox")
-
-x = !isMobile()
-window.addEventListener("resize",function(){
-    document.getElementById("buttons").style.marginRight = "1.5%"
-    document.getElementById("headText").style.marginRight = "auto"
-    if (isMobile()){
-        // document.getElementById("buttons").style.marginRight = "-50%"
-        document.getElementById("headText").style.marginRight = "5%"
-        // x=true
-    }
-
-    
-})
-document.getElementById("showb").addEventListener("click",function(){
-    y = "0.5%"
-    if(isMobile()) y="80.5%"
-    if(x){
-        y = "-50%"
-        if(isMobile()){
-            y=""
-        }
-    }
-    if(isMobile()){
-        document.getElementById("headText").style.marginRight = y
-
-    }else{
-        document.getElementById("buttonsts").style.marginRight = y
+let btn = [ document.getElementById("btn1"),
+            document.getElementById("btn2"),
+            document.getElementById("btn3"),
+            document.getElementById("btn4")]
+for (let i = 0; i < btn.length; i++) {
+  btn[i].addEventListener("mouseenter", function() {
+    // Scale up the hovered button
+    btn[i].style.transform = "scale(1.025)";
+    switch(btn[i]){
+        case btn[0]:
+            btn[1].style.marginTop =  "0.5rem"
+            btn[2].style.marginLeft = "0.5rem"
+            btn[3].style.marginLeft = "0.5rem"
+            break;
+        case btn[1]:
+            btn[0].style.marginBottom = "0.5rem"
+            btn[3].style.marginBottom = "0.5rem"
+            break;
+        case btn[2]:
+            btn[0].style.marginRight = "0.5rem"
+            btn[3].style.marginTop = "0.5rem"
+            break;
+        case btn[3]:
+            btn[0].style.marginRight = "0.5rem"
+            btn[2].style.marginBottom = "0.5rem"
+            break;
 
     }
-    x=!x
-})
-    
+  });
 
-for (let i = 0; i<button.length;i++){
-    button[i].addEventListener("click",function(){
-        clickity()
-        button[i].style.backgroundColor = "#d9f0a5"
-        button[i].style.transform = "scale(1.1)"
-        // button[i].style.marginLeft = "0.75vw"
-        // button[i].style.marginRight = "0.75vw"
-        textBox.innerHTML = texts[i]
-    })
+  // Reset all buttons on mouse leave
+  btn[i].addEventListener("mouseleave", function() {
+    for (let k = 0; k < btn.length; k++) {
+      btn[k].style.transform = "scale(1)";
+      btn[k].style.margin = "0"
+    }
+  });
 }
 
 
@@ -77,13 +58,5 @@ for (let i = 0; i<button.length;i++){
 
 
 
-function clickity(){
-    for (let i = 0; i<button.length;i++){
-        button[i].style.backgroundColor ="#e7f4c8"
-        button[i].style.transform = "scale(1.0)"
 
-        button[i].style.marginLeft =   "0.25vw"
-        button[i].style.marginRight = "0.25vw"
-    }
-}
 
