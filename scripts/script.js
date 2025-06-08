@@ -149,19 +149,26 @@ for (let i = 0; i < obj.btn.length; i++) {
         }
     });
     btn[i].addEventListener("click",function(){
+        let Origin = location.origin + "/pages/"
         switch(i){
             case 0:
+                window.location.href = Origin + "aboutme.html"
                 break;
             case 1:
+                window.location.href = "https://guthib.com"
                 break;
             case 2:
-                break;
+                window.open("https://www.youtube.com/watch?v=7CNqmUV-Ouo", "_blank")
+            break;
             case 3:
-                break;
+                window.open("https://discord.gg/sKWVSmg5gj", "_blank")
+            break;
             case 4:
-                break;
+                window.location.href = Origin + "music.html"
+            break;
             case 5:
-                break;
+                window.location.href = Origin + "anime.html"
+            break;
         }
     })
 }
