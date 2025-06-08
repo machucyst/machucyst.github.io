@@ -1,9 +1,14 @@
 window.addEventListener("load", function(){
-    document.getElementById("loading").style.backgroundColor = "#00000000"
-    document.getElementById("loading").style.visibility = "collapse"
-    // if (isMobile()){
-    //     document.getElementById("buttons").style.marginRight = "12.5%"
-    // }
+    const loadingEl = document.getElementById("loading");
+
+  // Optional: fade out first
+  loadingEl.style.transition = "opacity 0.3s";
+  loadingEl.style.opacity = "0";
+
+  // Then hide after transition
+  setTimeout(() => {
+    loadingEl.style.display = "none";
+  }, 300); // match transition duration
 })
 let headtext = document.getElementById("headText")
 headtext.addEventListener('mouseover',function(){
