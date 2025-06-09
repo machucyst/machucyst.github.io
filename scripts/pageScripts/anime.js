@@ -13,26 +13,24 @@ import fn from '../functions.js'
 // bts.forEach(card =>{
 //     observer.observe(card)
 // })
-gsap.registerPlugin(ScrollTrigger)
-gsap.utils.toArray(".bts").forEach(item =>{
-  gsap.to(item, {
-    opacity: 0,
-    scale: 0.8,
-    scrollTrigger: {
-      trigger: item,
-      scrub: true,
-      horizontal: true,
-      scroller: ".selection-grid",
-      start: "center left",
-      end: "+=300",
-      markers: true
-    }
-  });
-})
+gsap.registerPlugin(ScrollTrigger);
 
-// obj.btsGridGrid.addEventListener("wheel", function(e){
-//     this.scrollBy({
-//         left: e.deltaY,
-//         behavior: "smooth"
-//     })
-// },{passive:false})
+gsap.utils.toArray(".bts").forEach((item) => {
+  gsap.fromTo(
+    item,
+    { opacity: 0, y: 50 },
+    {
+      opacity: 1,
+      y: 0,
+      scrollTrigger: {
+        trigger: item,
+        scroller: "#selection-grid",
+        horizontal: true,
+        start: "left right",     // when item's left hits container's right
+        end: "left center",       // when item's right hits container's left
+        scrub: true,
+        markers:true,
+      },
+    }
+  );
+});
