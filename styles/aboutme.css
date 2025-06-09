@@ -1,0 +1,11 @@
+div{
+    height: 100vh;
+    width: 100vw;
+    overflow: scroll;
+    transform: rotate(-90deg) translateX(-100vh);
+    
+    overflow-x: hidden;
+    transform-origin: top left;
+    /* flex-direction: row; */
+    /* display: flex; */
+}

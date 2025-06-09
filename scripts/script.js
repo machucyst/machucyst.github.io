@@ -57,8 +57,8 @@ for (let i = 0; i < obj.btn.length; i++) {
                 btn[2].style.marginTop = "-0.15rem"
                 btn[3].style.marginTop = "-0.25rem"
                 btn[3].style.marginBottom = "0.5rem"
-                btn[4].style.marginRight = "-1.25rem"
-                btn[5].style.marginRight = "-1.5rem"
+                btn[4].style.marginRight = "-1.75rem"
+                btn[5].style.marginRight = "-2.75rem"
                 break;
             case btn[2]:
                 //Current
@@ -111,7 +111,7 @@ for (let i = 0; i < obj.btn.length; i++) {
                     break;
                 }
                 btn[0].style.marginLeft ="-0.15rem"
-                btn[1].style.marginLeft = "-1.25rem"
+                btn[1].style.marginLeft = "-1.5rem"
 
                 btn[2].style.marginTop = "-0.5rem"
                 btn[2].style.marginBottom = "0.5rem"
@@ -119,7 +119,7 @@ for (let i = 0; i < obj.btn.length; i++) {
                 btn[3].style.marginTop = "-0.5rem"
                 btn[3].style.marginBottom= "0.5rem"
 
-                btn[5].style.marginLeft = "0.5rem"
+                btn[5].style.marginLeft = "1rem"
                 break;
             case btn[5]:
                 if(fn.isMobile()){

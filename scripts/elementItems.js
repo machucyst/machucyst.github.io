@@ -7,7 +7,8 @@ export default{
     ],
     headtext:debi("headText"),
     loadingEl:debi("loading"),
-    btsGrid:debi("bts-grid")
+    btsGrid:debi("bts-grid"),
+    btsGridGrid:debi("selection-grid")
 
 }
 function debi(x){
