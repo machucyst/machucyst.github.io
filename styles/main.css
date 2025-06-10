@@ -27,7 +27,7 @@ body{
 .headText{
     padding-left: 1vw;
     margin-top: auto;
-    font-size: 2vh;
+    font-size: 2vh; 
     white-space: nowrap;
     line-height: normal;
     margin-bottom: auto;
@@ -112,7 +112,7 @@ body{
   justify-content: center;
   align-items: end;
   display: flex;
-  overflow: hidden;
+  /* overflow: hidden; */
   border: black;
   border-style: solid;
   border-width: 0.15rem;

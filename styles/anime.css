@@ -24,26 +24,22 @@ body{
     margin: 0;
     padding: 0;
 }
-.headText{
-    padding-left: 1vw;
-    margin-top: auto;
-    font-size: 2vh;
-    white-space: nowrap;
-    line-height: normal;
-    margin-bottom: auto;
-    margin-right: auto;
-    transition: 0.5s ease-in-out;
-    content: attr(data-default);
-    cursor: default;
-}
-.no-select, .btnHead{
+
+
+.no-select, .mainText, .subText{
   user-select: none;        /* Standard */
   -webkit-user-select: none; /* Safari */
   -moz-user-select: none;   /* Firefox */
   -ms-user-select: none;    /* IE10+ */
 }
 
-
+.clickable{
+    cursor: pointer;
+}
+.clickable:hover{
+    background-color: #DEC8DD !important;
+    letter-spacing: 0.03em;
+}
 #loading{
     height: 100%;
     width: 100%;
@@ -74,49 +70,22 @@ body{
     width:0;
     height: 0;
 }
-#bts-grid{
-    display: grid;
-    grid-template-rows: repeat(1,1fr);
-    gap: 0.6rem;
-    padding: 2rem;
-    width: 100%; height: 40rem;
-    /* overflow-y: auto; */
-    justify-items: center;
-    box-sizing: border-box;
-    align-items: stretch;
-    transition: 0.4s;
-}
 .bts{
     background-color: #cea3f0;
     position: relative;
-    transition: 0.4s ease-in;
-    will-change: transform;
+    /* transition: 0.4s ease-in; */
+    /* will-change: transform; */
     /* transition: 0.5s, border-radius 0s; */
     border-radius: 0.44rem;
     border-width: 1vh;
     opacity: 0;
     transition: opacity 0.3s ease, transform 0.3s ease;
-    display: block;
     width: 300px;
     height: auto;
-    cursor: pointer;
+    /* cursor: pointer; */
     margin-top: 25%;
     margin-bottom: 25%;
 }
-.visib{
-    opacity: 1;
-}
-.bts:hover{
-    background-color: #DEC8DD !important;
-    letter-spacing: 0.03em;
-}
-#btn1{transform-origin: top left;      grid-row: 1;  grid-column: 1;}
-#btn2{transform-origin: bottom left;   grid-row: 2;    grid-column: 1;}
-#btn3{transform-origin: top right;    grid-row: 3;    grid-column: 1;}
-/* #btn4{transform-origin: center center; grid-row: 2;    grid-column: 2/5;}
-#btn5{transform-origin: bottom center; grid-row: 3;    grid-column: 3/5; justify-self: end;}
-#btn6{transform-origin: bottom right;  grid-row: 2/4;  grid-column: 5;} */
-
 .mainContent{
     margin-left: 5vw;
     margin-right: 5vw;
@@ -128,7 +97,7 @@ body{
     width:auto;
     display: flex;
 }
-.mainContent #bts-grid div{
+.mainContent #selection-grid .bts{
   justify-content: center;
   align-items: end;
   display: flex;
@@ -137,10 +106,26 @@ body{
   border-style: solid;
   border-width: 0.15rem;
 }
-.mainContent #bts-grid div p{
-  line-break: normal;
-  font-size: clamp(1.5rem, 2vh, 2vh);
-  text-align: center;
+.mainContent #selection-grid .bts .bts-contain{
+    display: grid;
+    grid-auto-flow: row;
+    gap: 0rem;
+    margin-bottom: 1rem;
+    padding: 0;
+  }
+.mainContent #selection-grid div p{
+    line-break: normal;
+    
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+.mainText{
+    font-size: clamp(1.5rem, 2vh, 2vh);
+}
+.subText{
+    font-size: clamp(1rem, 0.5vh, 1vh);
+    opacity: 0.8;
 }
 @media (max-width:768px){
   #bts-grid{
