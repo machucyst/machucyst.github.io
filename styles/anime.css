@@ -16,16 +16,22 @@
     display: flex;
     text-align: normal;
 }
-*{
- font-family: Romaji,Japanese !important;
-}
 body{
     overflow: hidden !important;
     margin: 0;
     padding: 0;
 }
-
-
+.headText{
+    margin: 0;
+    margin-left: 1vw;
+    margin-top: auto;
+    font-size: 2vh;
+}
+.headText:hover{
+    text-decoration: underline;
+    color: aliceblue;
+    cursor: pointer;
+}
 .no-select, .mainText, .subText{
   user-select: none;        /* Standard */
   -webkit-user-select: none; /* Safari */
@@ -115,16 +121,17 @@ body{
   }
 .mainContent #selection-grid div p{
     line-break: normal;
-    
     text-align: center;
     padding: 0;
     margin: 0;
 }
 .mainText{
     font-size: clamp(1.5rem, 2vh, 2vh);
+    transition: 0.3s;
 }
 .subText{
     font-size: clamp(1rem, 0.5vh, 1vh);
+    transition: 0.3s;
     opacity: 0.8;
 }
 @media (max-width:768px){
@@ -154,11 +161,18 @@ body{
     background-repeat: no-repeat;
     background-size: cover;
 }
+*{
+ font-family: "Quicksand","Kosugi Maru","BIZ UDPGothic" !important;
+}
 @font-face {
-    font-family: "Romaji";
+    font-family: "Quicksand";
     src: url(../fonts/QUICKSAND-MEDIUM.TTF);
 }
 @font-face {
-    font-family: "Japanese";
+    font-family: "BIZ UDPGothic";
     src: url(../fonts/BIZ-UDGOTHICB.TTC);
+}
+@font-face {
+  font-family: "Kosugi Maru";
+  src:url(../fonts/KOSUGIMARU-REGULAR.TTF)
 }

@@ -16,9 +16,7 @@
     display: flex;
     text-align: normal;
 }
-*{
- font-family: Romaji,Japanese !important;
-}
+
 body{
     
     margin: 0;
@@ -149,6 +147,9 @@ body{
     background-repeat: no-repeat;
     background-size: cover;
 }
+*{
+ font-family: Romaji,Kosugi Maru,Japanese !important;
+}
 @font-face {
     font-family: "Romaji";
     src: url(../fonts/QUICKSAND-MEDIUM.TTF);
@@ -156,4 +157,8 @@ body{
 @font-face {
     font-family: "Japanese";
     src: url(../fonts/BIZ-UDGOTHICB.TTC);
+}
+@font-face {
+  font-family: "Kosugi Maru";
+  src:url(../fonts/KOSUGIMARU-REGULAR.TTF)
 }

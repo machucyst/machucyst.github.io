@@ -158,7 +158,7 @@ for (let i = 0; i < obj.btn.length; i++) {
                 window.location.href = "https://guthib.com"
                 break;
             case 2:
-                window.open("https://www.youtube.com/watch?v=7CNqmUV-Ouo", "_blank")
+                window.location.href = Origin + "socials.html"
             break;
             case 3:
                 window.open("https://discord.gg/sKWVSmg5gj", "_blank")

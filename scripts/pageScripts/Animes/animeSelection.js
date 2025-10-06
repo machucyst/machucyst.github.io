@@ -25,10 +25,10 @@ export default{
       titleJP: "ホリミヤ"
     },
     7 : {
-      title: "Bocchi the Rock"
+      title: "John Anime"
     },
     8 : {
-      title: "Bocchi the Rock"
+      title: "John Anime"
     }
   }
   

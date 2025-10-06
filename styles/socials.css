@@ -1,0 +1,161 @@
+body{
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+#bts-grid{
+  display: grid;
+  grid-template-columns: repeat(5,1fr);
+  grid-template-rows: repeat(3,1fr);
+  margin-top: 2rem;
+  row-gap: 1rem;
+  width: 100%; height: auto;
+  justify-items: center;
+  box-sizing: border-box;
+  align-items: stretch;
+  transition: 0.4s;
+}
+@media (max-width:1200px){
+    #bts-grid{
+        grid-template-columns: repeat(4,1fr);
+        grid-template-rows: repeat(4,1fr);
+        width: 100%; height: auto;
+    }
+}
+@media (max-width:840px){
+    #bts-grid{
+        grid-template-columns: repeat(3,1fr);
+        grid-template-rows: repeat(4,1fr);
+        width: 100%; height: auto;
+    }
+}
+@media (max-width:630px){
+    #bts-grid{
+        grid-template-columns: repeat(2,1fr);
+        grid-template-rows: repeat(4,1fr);
+        width: 100%; height: auto;
+    }
+}
+@media (max-width:415px){
+    #bts-grid{
+        grid-template-columns: repeat(1,1fr);
+        grid-template-rows: repeat(5,1fr);
+        width: 100%; height: auto;
+    }
+}
+.bts{
+  background-color: #cea3f0;
+  position: relative;
+  transition: 0.5s ease;
+  will-change: transform;
+  transition: 0.5s, border-radius 0s;
+  border-radius: 0.44rem;
+  border-width: 1vh;
+  display: block;
+  width: auto;
+  aspect-ratio: 1/1;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+.mainContent #bts-grid div{
+  justify-content: center;
+  align-items: end;
+  display: flex;
+  /* overflow: hidden; */
+  border: black;
+  border-style: solid;
+  border-width: 0.15rem;
+}
+.bts:hover{
+    background-color: #DEC8DD !important;
+    transform: scale(1.05);
+    letter-spacing: 0.03em;
+    transition: 0.5s;
+    /* margin: 2% !important; */
+}
+.head{
+    background: #cea3f0;
+    background: linear-gradient(90deg,rgba(206, 163, 240, 1) 0%, rgba(222, 200, 221, 1) 50%, rgba(255, 247, 247, 1) 100%);
+    padding-top: 0.5vh;
+    padding-left: 0.25vw;
+    margin-bottom: 0;
+    padding-right: 0.25vw;
+    padding-bottom: 1vh;
+    border-width: 50px;
+    border: 0px;
+    border-bottom: 2px;
+    border-style: solid;
+    width: 100%;
+    height: 10%;
+    max-height: 10%;
+    display: flex;
+    text-align: normal;
+}
+.headText{
+    padding-left: 1vw;
+    margin-top: auto;
+    font-size: 2vh; 
+    white-space: nowrap;
+    line-height: normal;
+    margin-bottom: auto;
+    margin-right: auto;
+    content: attr(data-default);
+    cursor: default;
+}
+.headText:hover{
+    text-decoration: underline;
+    color: aliceblue;
+    cursor: pointer;
+}
+.bts::before,
+.bts::after{
+    transition: opacity 0.5s ease-in-out;
+}
+#btn1{background-image: url(../images/Profiles/discord-d.jpg);}
+#btn2{background-image: url(../images/Profiles/steam-d.jpg);}
+#btn3{background-image: url(../images/Profiles/spotify-d.png);}
+#btn4{background-image: url(../images/Profiles/youtube-d.png);}
+#btn5{background-image: url(../images/Profiles/mal-d.png);}
+
+#btn1:hover{background-image: url(../images/Profiles/discord.png);p{color: black;}}
+#btn2:hover{background-image: url(../images/Profiles/steam.jpg); color:black}
+#btn3:hover{background-image: url(../images/Profiles/spotify.png);p{colo1r: white;}}
+#btn4:hover{background-image: url(../images/Profiles/youtube.png);}
+#btn5:hover{background-image: url(../images/Profiles/mal.png);}
+
+button:hover::after {
+  opacity: 1;
+}
+.bts{
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.mainContent{
+    margin-left: 5vw;
+    margin-right: 5vw;
+    background: #cea3f0;
+    background: linear-gradient(8deg, rgba(206, 163, 240, 1) 0%, rgba(222, 200, 221, 1) 50%, rgba(255, 247, 247, 1) 100%);
+    /* margin-top: 2vh; */
+    margin-bottom: 2vh;
+    min-height: 92vh;
+    height: fit-content;
+    width:auto;
+    display: flex;
+}
+*{
+ font-family: Romaji,Kosugi Maru,Japanese !important;
+}
+@font-face {
+    font-family: "Romaji";
+    src: url(../fonts/QUICKSAND-MEDIUM.TTF);
+}
+@font-face {
+    font-family: "Japanese";
+    src: url(../fonts/BIZ-UDGOTHICB.TTC);
+}
+@font-face {
+  font-family: "Kosugi Maru";
+  src:url(../fonts/KOSUGIMARU-REGULAR.TTF)
+}

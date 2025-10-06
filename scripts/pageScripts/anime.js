@@ -6,8 +6,10 @@ import ani from './Animes/animeSelection.js'
 
 
 
-
-
+fn.toggleFunction(obj.headtext, "hover", "Anime","return?")
+obj.headtext.addEventListener("click",function(){
+  window.location.href = location.origin +"/index.html"
+})
 
 const bts = Array.from(document.querySelectorAll(".bts"));
 const handlers = new WeakMap();
