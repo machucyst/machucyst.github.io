@@ -161,7 +161,7 @@ for (let i = 0; i < obj.btn.length; i++) {
                 window.location.href = Origin + "socials.html"
             break;
             case 3:
-                window.open("https://discord.gg/sKWVSmg5gj", "_blank")
+                window.location.href = Origin + "games.html"
             break;
             case 4:
                 window.location.href = Origin + "music.html"

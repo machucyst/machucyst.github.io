@@ -1,6 +1,6 @@
 import obj from '../elementItems.js';
 import fn from '../functions.js'
-import ani from './Animes/animeSelection.js'
+import ani from './data.js'
 
 
 
@@ -10,7 +10,24 @@ fn.toggleFunction(obj.headtext, "hover", "Anime","return?")
 obj.headtext.addEventListener("click",function(){
   window.location.href = location.origin +"/index.html"
 })
-
+const grid = document.querySelector("#selection-grid");
+grid.innerHTML = ""
+Object.entries(ani.anime).forEach(([key,anime])=>{
+  const div = document.createElement('div')
+  div.classList.add("bts");
+  const div2 = document.createElement('div');
+  div2.classList.add("bts-contain");
+  const mainText = document.createElement('p');
+  mainText.classList.add("mainText");
+  mainText.innerText = `${anime.title}`
+  const subText = document.createElement('p');
+  subText.innerText = (`${anime.titleJP}`) == "undefined" ? parseInt(key)+.1 : (`${anime.titleJP}`)
+  subText.classList.add("subText");
+  div2.appendChild(mainText)
+  div2.appendChild(subText)
+  div.appendChild(div2)
+  grid.appendChild(div)
+})
 const bts = Array.from(document.querySelectorAll(".bts"));
 const handlers = new WeakMap();
 
@@ -38,30 +55,8 @@ const observer = new IntersectionObserver(test => {
   });
 }, 
 {root: document.getElementById("selection-grid"),threshold: 0.5,rootMargin: "-100px"});
-bts.forEach((card,index) =>{
+bts.forEach((card) =>{
   observer.observe(card)
-  const mainText = card.querySelector(".mainText")
-  const subText = card.querySelector(".subText")
-  
-  try{
-    
-    const anime = ani.anime[index+1];
-    let title = `${anime.title}`
-    let titleJP = `${anime.titleJP}`
-    if(mainText) {
-      mainText.textContent = title
-    }
-    if(subText){
-      subText.textContent = (titleJP =="undefined" ? index+1.1 : titleJP)
-    }
-  }catch{
-    if(mainText) {
-      mainText.textContent = index+1
-    }
-    if(subText){
-      subText.textContent = index+1.1
-    }  
-  }
 })
 
 
@@ -91,7 +86,7 @@ fn.enableScroll(false)
 let scrollVelocity = 0;
 let isScrolling = false;
 
-const grid = obj.btsGridGrid;
+
 
 grid.addEventListener("wheel", function (e) {
   e.preventDefault();

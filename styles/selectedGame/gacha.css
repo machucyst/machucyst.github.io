@@ -5,44 +5,23 @@ body{
     overflow-y: hidden;
 }
 #bts-grid{
-  display: grid;
-  grid-template-columns: repeat(5,1fr);
-  grid-template-rows: repeat(3,1fr);
-  margin-top: 2rem;
+  grid-template-columns: repeat(1,auto);
+  grid-auto-rows: minmax(0,1fr);
   row-gap: 1rem;
-  width: 100%; height: auto;
-  justify-items: center;
-  box-sizing: border-box;
-  align-items: stretch;
+  width: 100%; height: 100%;
+  align-items: normal;
   transition: 0.4s;
+  overflow-x: hidden;
+  overflow-y: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding-right: 2vw;
+  padding-left: 2vw;
+  padding-bottom: 2vh;
 }
-@media (max-width:1200px){
-    #bts-grid{
-        grid-template-columns: repeat(4,1fr);
-        grid-template-rows: repeat(4,1fr);
-        width: 100%; height: auto;
-    }
-}
-@media (max-width:840px){
-    #bts-grid{
-        grid-template-columns: repeat(3,1fr);
-        grid-template-rows: repeat(4,1fr);
-        width: 100%; height: auto;
-    }
-}
-@media (max-width:630px){
-    #bts-grid{
-        grid-template-columns: repeat(2,1fr);
-        grid-template-rows: repeat(4,1fr);
-        width: 100%; height: auto;
-    }
-}
-@media (max-width:415px){
-    #bts-grid{
-        grid-template-columns: repeat(1,1fr);
-        grid-template-rows: repeat(5,1fr);
-        width: 100%; height: auto;
-    }
+#bts-grid::-webkit-scrollbar{
+    width: 0;
+    background: transparent;
 }
 .bts{
   background-color: #cea3f0;
@@ -53,8 +32,9 @@ body{
   border-radius: 0.44rem;
   border-width: 1vh;
   display: block;
-  width: auto;
-  aspect-ratio: 1/1;
+  width: 95%;
+  margin-top: 1rem;
+  aspect-ratio: 7/1;
   cursor: pointer;
   box-sizing: border-box;
 }
@@ -108,54 +88,49 @@ body{
     color: aliceblue;
     cursor: pointer;
 }
+.btnHead{
+    font-size: 3vh;
+}
 .bts::before,
 .bts::after{
     transition: opacity 0.5s ease-in-out;
 }
-#btn1{background-image: url(../images/Profiles/discord-d.jpg);}
-#btn2{background-image: url(../images/Profiles/steam-d.jpg);}
-#btn3{background-image: url(../images/Profiles/spotify-d.png);}
-#btn4{background-image: url(../images/Profiles/youtube-d.png);}
-#btn5{background-image: url(../images/Profiles/mal-d.png);}
-
-#btn1:hover{background-image: url(../images/Profiles/discord.png);p{color: black;}}
-#btn2:hover{background-image: url(../images/Profiles/steam.jpg); color:black}
-#btn3:hover{background-image: url(../images/Profiles/spotify.png);p{colo1r: white;}}
-#btn4:hover{background-image: url(../images/Profiles/youtube.png);}
-#btn5:hover{background-image: url(../images/Profiles/mal.png);}
 
 button:hover::after {
   opacity: 1;
 }
 .bts{
     background-repeat: no-repeat;
+    background-position: center;
     background-size: cover;
 }
 
 .mainContent{
-    margin-left: 5vw;
-    margin-right: 5vw;
+    margin-left: 10vw;
+    margin-right: 10vw;
     background: #cea3f0;
     background: linear-gradient(8deg, rgba(206, 163, 240, 1) 0%, rgba(222, 200, 221, 1) 50%, rgba(255, 247, 247, 1) 100%);
     /* margin-top: 2vh; */
     margin-bottom: 2vh;
     min-height: 96vh;
-    height: fit-content;
+    overflow: hidden;
+    height: 96vh;
     width:auto;
     display: flex;
+    flex-direction: column;
 }
 *{
  font-family: Romaji,Kosugi Maru,Japanese !important;
 }
 @font-face {
     font-family: "Romaji";
-    src: url(../fonts/QUICKSAND-MEDIUM.TTF);
+    src: url(../../fonts/QUICKSAND-MEDIUM.TTF);
 }
 @font-face {
     font-family: "Japanese";
-    src: url(../fonts/BIZ-UDGOTHICB.TTC);
+    src: url(../../fonts/BIZ-UDGOTHICB.TTC);
 }
 @font-face {
   font-family: "Kosugi Maru";
-  src:url(../fonts/KOSUGIMARU-REGULAR.TTF)
+  src:url(../../fonts/KOSUGIMARU-REGULAR.TTF)
 }

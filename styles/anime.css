@@ -1,37 +1,4 @@
-.head{
-    background: #cea3f0;
-    background: linear-gradient(90deg,rgba(206, 163, 240, 1) 0%, rgba(222, 200, 221, 1) 50%, rgba(255, 247, 247, 1) 100%);
-    padding-top: 0.5vh;
-    padding-left: 0.25vw;
-    margin-bottom: 0;
-    padding-right: 0.25vw;
-    padding-bottom: 1vh;
-    border-width: 50px;
-    border: 0px;
-    border-bottom: 2px;
-    border-style: solid;
-    width: 100%;
-    height: 10%;
-    max-height: 10%;
-    display: flex;
-    text-align: normal;
-}
-body{
-    overflow: hidden !important;
-    margin: 0;
-    padding: 0;
-}
-.headText{
-    margin: 0;
-    margin-left: 1vw;
-    margin-top: auto;
-    font-size: 2vh;
-}
-.headText:hover{
-    text-decoration: underline;
-    color: aliceblue;
-    cursor: pointer;
-}
+
 .no-select, .mainText, .subText{
   user-select: none;        /* Standard */
   -webkit-user-select: none; /* Safari */
@@ -154,25 +121,11 @@ body{
 }
 
 body{
-    margin: 0;
-    padding: 0;
     overflow: hidden scroll;
     background-image: url(../images/1371663.png);
     background-repeat: no-repeat;
     background-size: cover;
-}
-*{
- font-family: "Quicksand","Kosugi Maru","BIZ UDPGothic" !important;
-}
-@font-face {
-    font-family: "Quicksand";
-    src: url(../fonts/QUICKSAND-MEDIUM.TTF);
-}
-@font-face {
-    font-family: "BIZ UDPGothic";
-    src: url(../fonts/BIZ-UDGOTHICB.TTC);
-}
-@font-face {
-  font-family: "Kosugi Maru";
-  src:url(../fonts/KOSUGIMARU-REGULAR.TTF)
+    overflow: hidden !important;
+    margin: 0;
+    padding: 0;
 }

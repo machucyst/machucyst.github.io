@@ -1,0 +1,174 @@
+body{
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+#bts-grid{
+  display:grid;
+  grid-template-columns: repeat(2,1fr);
+  grid-template-rows: repeat(6,1fr);
+  gap: 1rem;
+  width: 100%; height: 100%;
+  align-items: normal;
+  transition: 0.4s;
+  overflow-x: hidden;
+  overflow-y: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding-top: 2vh;
+  padding-right: 2vw;
+  padding-left: 2vw;
+  padding-bottom: 2vh;
+}
+#description{grid-row: 1/2; grid-column: 1;}
+#images{grid-row: 2/4; grid-column: 1;
+aspect-ratio: 16/9;
+}
+#favorite{grid-row: 1/4; grid-column: 2;
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-columns: repeat(1, 1fr);
+  flex-direction: column;
+}
+
+#info{grid-row:4/6; grid-column: 2;}
+#bts-grid::-webkit-scrollbar{
+    width: 0;
+    background: transparent;
+}
+#btnLeft{margin-right: auto;}
+#btnRight{margin-left: auto;}
+.bts{
+  background-color: #cea3f0;
+  position: relative;
+  transition: 0.5s ease;
+  will-change: transform;
+  transition: 0.5s, border-radius 0s;
+  border-radius: 0.44rem;
+  border-width: 1vh;
+  display: block;
+  width: 95%;
+  margin-top: 1rem;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.mainContent #bts-grid div{
+  justify-content: center;
+  /* align-items: end; */
+  display: flex;
+  border: black;
+  border-style: solid;
+  border-width: 0.15rem;
+}
+.mainContent #bts-grid .text{
+  padding: 2vw;
+}
+#favorite img{
+  grid-row: 1/2;
+  width: 95%;
+  align-self: center;
+  margin-top: auto;
+  margin-bottom: auto;
+  aspect-ratio: 1/1 !important;
+}
+#favName{
+  grid-row: 2/3;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  background: aliceblue;        /* fills the entire box */
+  
+  display: flex;                /* centers text */
+  align-items: center;          /* vertical center */
+  justify-content: center;      /* horizontal center */
+
+  text-align: center;
+  box-sizing: border-box;
+  font-size: 1vw;
+  font-weight: 900;
+}
+
+.head{
+  background: #cea3f0;
+  background: linear-gradient(90deg,rgba(206, 163, 240, 1) 0%, rgba(222, 200, 221, 1) 50%, rgba(255, 247, 247, 1) 100%);
+  padding-top: 0.5vh;
+  padding-left: 0.25vw;
+  margin-bottom: 0;
+  padding-right: 0.25vw;
+  padding-bottom: 1vh;
+  border-width: 50px;
+  border: 0px;
+  border-bottom: 2px;
+  border-style: solid;
+  width: 100%;
+  height: 10%;
+  max-height: 10%;
+  display: flex;
+  text-align: normal;
+}
+.headText{
+  padding-left: 1vw;
+  margin-top: auto;
+  font-size: 2vh; 
+  white-space: nowrap;
+  line-height: normal;
+  margin-bottom: auto;
+  margin-right: auto;
+  content: attr(data-default);
+  cursor: default;
+}
+.headText:hover{
+    text-decoration: underline;
+    color: aliceblue;
+    cursor: pointer;
+}
+.btnHead{
+    font-size: 3vh;
+}
+.bts::before,
+.bts::after{
+    transition: opacity 0.5s ease-in-out;
+}
+
+button:hover::after {
+  opacity: 1;
+}
+.bts{
+  background-repeat: no-repeat; 
+  background-position: center;
+  background-size: cover;
+}
+
+.mainContent{
+  margin-left: 10vw;
+  margin-right: 10vw;
+  background: #cea3f0;
+  background: linear-gradient(8deg, rgba(206, 163, 240, 1) 0%, rgba(222, 200, 221, 1) 50%, rgba(255, 247, 247, 1) 100%);
+  /* margin-top: 2vh; */
+  margin-bottom: 2vh;
+  min-height: 96vh;
+  overflow: hidden;
+  height: 96vh;
+  width:auto;
+  display: flex;
+}
+*{
+ font-family: Romaji,Kosugi Maru,Japanese !important;
+}
+@font-face {
+  font-family: "Romaji";
+  src: url(../../fonts/QUICKSAND-MEDIUM.TTF);
+}
+@font-face {
+  font-family: "Japanese";
+  src: url(../../fonts/BIZ-UDGOTHICB.TTC);
+}
+@font-face {
+  font-family: "Kosugi Maru";
+  src:url(../../fonts/KOSUGIMARU-REGULAR.TTF)
+}
+#images{
+  height: 50vh !important;
+}
