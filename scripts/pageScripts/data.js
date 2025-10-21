@@ -45,10 +45,12 @@ export default{
         name:"Sima Yi (Reines)",
       },
       images:{
-        1:"placeholder.png ",
-        2:"placeholder2.png"
+        1:"fgo1.png ",
+        2:"fgo2.png",
+        3:"fgo3.png",
+        4:"fgo4.png",
       },
-      desc: "something something desc",
+      desc: "I have over 1850 logins, i could be investing my life somewhere else but whatever. NP6 Reines in the span of 4 years now im looking for my next target. Maybe Gensai since she looks cool",
     },
     2 : {
       thumbnail:"uma-d.png",
@@ -63,13 +65,13 @@ export default{
         1:"placeholder.png ",
         2:"placeholder2.png "
       },
-      desc: "honse honse",
+      desc: "i have the played jp before global card yip.",
     },
     3 : {
       thumbnail:"ba-d.jpg",
       title: "Blue Archive",
       color: "rgb(52, 191, 238)",
-      uid: "ID",
+      uid: "1889581",
       favorite:{
         image:"Aoba.png",
         name:"Aoba",
@@ -78,7 +80,7 @@ export default{
         1:"placeholder.png ",
         2:"placeholder2.png "
       },
-      desc: "desc",
+      desc: "no i do not do the funny emoji shenanigans",
     },
     4 : {
       thumbnail:"hsr-d.png",
@@ -93,7 +95,7 @@ export default{
         1:"placeholder.png ",
         2:"placeholder2.png "
       },
-      desc: "desc",
+      desc: "powercreep is insane",
     },
     5: {
       thumbnail:"tbc-d.jpg",
@@ -102,13 +104,13 @@ export default{
       uid: "ID",
       favorite:{
         image:"url",
-        name:"Kasli the Scourge",
+        name:"Kasli the Bane",
       },
       images:{
         1:"placeholder.png ",
         2:"placeholder2.png "
       },
-      desc: "desc",
+      desc: "i lost my account for 7 yrs i managed to get it back using the power of friendship with people i dont talk to anymore",
     },
     6: {
       thumbnail:"ak-d.jpg",
@@ -116,15 +118,31 @@ export default{
       color: "cyan",
       uid: "ID",
       favorite:{
-        image:"url",
+        image:"Irene.png",
         name:"Irene",
       },
       images:{
         1:"placeholder.png ",
         2:"placeholder2.png "
       },
-      desc: "desc",
+      desc: "i advocate for tower offense meta",
     },
+    7: {
+      thumbnail:"ss-d.png",
+      title:"Stella Sora",
+      color:"lightblue",
+      uid:"700373424",
+      favorite:{
+        image:"Tyrant.png",
+        name:"Tyrant"
+      },
+      images:{
+        1:"ss1.png",
+        2:"ss3.png",
+        3:"ss2.png",
+      },
+      desc: "trying it out, seems fun",
+    }
     
   }
   

@@ -15,26 +15,7 @@ Object.entries(data.games).forEach(([key,item])=>{
    div.id = `btn${key}`;
    let Origin = location.origin + "/pages/selectedgame/"
    div.addEventListener("click",function(){
-            switch(parseInt(key)-1){
-                case 0:
-                    window.location.href = Origin + "gachaSelected.html?selected=fgo"
-                    break;
-                case 1:
-                    window.location.href = Origin + "gachaSelected.html?selected=uma"
-                    break;
-                case 2:
-                    window.location.href = Origin + "gachaSelected.html?selected=ba"
-                    break;
-                case 3:
-                    window.location.href = Origin + "gachaSelected.html?selected=hsr"
-                    break;
-                case 4:
-                    window.location.href = Origin + "gachaSelected.html?selected=tbc"
-                    break;
-                case 5:
-                    window.location.href = Origin + "gachaSelected.html?selected=ak"
-                    break;
-            }
+        window.location.href = Origin + "gachaSelected.html?selected="+key
    })
    div.style.backgroundImage = `url(../../images/Games/${item.thumbnail})`
    const p = document.createElement('p');
