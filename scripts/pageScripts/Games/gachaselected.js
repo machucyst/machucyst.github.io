@@ -24,7 +24,7 @@ favName.innerHTML = `${select.favorite.name}`
 desc.innerHTML = `${select.desc}`
 uid.innerHTML = `UID: ${select.uid}`
 imageSelection.src = images[0]
-imageParent.style.background = images[0]
+imageParent.style.background = "black"
 img.src = `url(../../../../images/Games/Gacha/${select.favorite.image}`
 favorite.prepend(img)
 const btn = [document.querySelector("#btnLeft"), document.querySelector("#btnRight")]
@@ -37,7 +37,7 @@ btn[0].addEventListener("click",function(){
         x--;
     }
     imageSelection.src = images[x]
-    imageParent.style.background=images[x]
+    // imageParent.style.background="black"
 })
 btn[1].addEventListener("click",function(){
     if(x==limit){
@@ -46,5 +46,5 @@ btn[1].addEventListener("click",function(){
         x++;
     }
     imageSelection.src = images[x]
-    imageParent.style.background=images[x]
+    // imageParent.style.background="black"
 })
