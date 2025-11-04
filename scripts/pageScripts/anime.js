@@ -13,6 +13,11 @@ obj.headtext.addEventListener("click",function(){
 const grid = document.querySelector("#selection-grid");
 grid.innerHTML = ""
 Object.entries(ani.anime).forEach(([key,anime])=>{
+  const img1 = `url(../../images/${anime.art1})`
+  const img2 = `url(../../images/${anime.art2})`
+
+
+
   const div = document.createElement('div')
   div.classList.add("bts");
   const div2 = document.createElement('div');
@@ -21,6 +26,13 @@ Object.entries(ani.anime).forEach(([key,anime])=>{
   mainText.classList.add("mainText");
   mainText.innerText = `${anime.title}`
   const subText = document.createElement('p');
+  div.style.backgroundImage = img1;
+  div.addEventListener("mouseover", ()=>{
+    div.style.backgroundImage = img2;
+  })
+  div.addEventListener("mouseleave", ()=>{
+    div.style.backgroundImage = img1;
+  })
   subText.innerText = (`${anime.titleJP}`) == "undefined" ? parseInt(key)+.1 : (`${anime.titleJP}`)
   subText.classList.add("subText");
   div2.appendChild(mainText)
@@ -99,17 +111,11 @@ grid.addEventListener("wheel", function (e) {
 });
 
 function smoothScroll() {
-  // Apply velocity
   grid.scrollLeft += scrollVelocity;
-  
-  // Apply friction (reduce velocity gradually)
   scrollVelocity *= 0.85;
-  
-  // If velocity is significant, keep animating
   if (Math.abs(scrollVelocity) > 0.5) {
     requestAnimationFrame(smoothScroll);
   } else {
-    // Stop
     scrollVelocity = 0;
     isScrolling = false;
   }

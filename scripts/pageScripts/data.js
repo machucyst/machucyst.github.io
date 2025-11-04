@@ -2,7 +2,9 @@ export default{
   anime : {
     1 : {
       title: "Nisekoi",
-      titleJP: "ニセコイ"
+      titleJP: "ニセコイ",
+      art1:"1371663.png",
+      art2:"1371664.png"
     },
     2 : {
       title: "Mono",
