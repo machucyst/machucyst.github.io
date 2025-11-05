@@ -85,7 +85,6 @@ bts.forEach((card) =>{
 function selectAnime(index) {
   index++
   const anime = ani.anime[index];
-  
   if (anime) {
     window.location.href = location.origin + "/pages/selectedanime/selectedAnime.html?selected=" + `${anime.title}`
   } else {
@@ -93,16 +92,13 @@ function selectAnime(index) {
   }
 }
 
-
 fn.enableScroll(false)
 let scrollVelocity = 0;
 let isScrolling = false;
 
-
-
 grid.addEventListener("wheel", function (e) {
   e.preventDefault();
-  scrollVelocity += e.deltaY*0.25; // You can tweak multiplier for speed
+  scrollVelocity += e.deltaY*0.25;
   
   if (!isScrolling) {
     isScrolling = true;
