@@ -3,7 +3,7 @@ import fn from '../../functions.js'
 import data from '../data.js'
 const params = new URLSearchParams(window.location.search)
 // document.getElementById("text").innerHTML = params.get("selected")
-
+fn.toggleFunction(obj.headtext, "hover", "machucyst","return?")
 obj.headtext.addEventListener("click",function(){
     window.location.href = location.origin + "/pages/selectedgame/gacha.html"
 })
