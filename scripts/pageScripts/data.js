@@ -101,14 +101,13 @@ export default{
       thumbnail:"tbc-d.jpg",
       title: "The Battle Cats",
       color: "red",
-      uid: "ID",
+      uid: "None",
       favorite:{
-        image:"url",
-        name:"Kasli the Bane",
+        image:"kasli.png",
+        name:"Kasli the Scourge",
       },
       images:{
-        1:"placeholder.png ",
-        2:"placeholder2.png "
+        1:"bc1.png ",
       },
       desc: "i lost my account for 7 yrs i managed to get it back using the power of friendship with people i dont talk to anymore",
     },
@@ -116,7 +115,7 @@ export default{
       thumbnail:"ak-d.jpg",
       title: "Arknights",
       color: "cyan",
-      uid: "ID",
+      uid: "38605704",
       favorite:{
         image:"Irene.png",
         name:"Irene",
