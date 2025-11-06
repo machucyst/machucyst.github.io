@@ -2,19 +2,18 @@ body{
     margin: 0;
     padding: 0;
     overflow-x: hidden;
-    overflow-y: hidden;
 }
 #bts-grid{
-  display: grid;
-  grid-template-columns: repeat(5,1fr);
-  grid-template-rows: repeat(3,1fr);
-  margin-top: 2rem;
-  row-gap: 1rem;
-  width: 100%; height: auto;
-  justify-items: center;
-  box-sizing: border-box;
-  align-items: stretch;
-  transition: 0.4s;
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    grid-template-rows: repeat(3,1fr);
+    margin-top: 2rem;
+    row-gap: 1rem;
+    width: 100%; height: auto;
+    justify-items: center;
+    box-sizing: border-box;
+    align-items: stretch;
+    transition: 0.4s;
 }
 @media (max-width:1200px){
     #bts-grid{
@@ -45,34 +44,32 @@ body{
     }
 }
 .bts{
-  background-color: #cea3f0;
-  position: relative;
-  transition: 0.5s ease;
-  will-change: transform;
-  transition: 0.5s, border-radius 0s;
-  border-radius: 0.44rem;
-  border-width: 1vh;
-  display: block;
-  width: auto;
-  aspect-ratio: 1/1;
-  cursor: pointer;
-  box-sizing: border-box;
+    background-color: #cea3f0;
+    position: relative;
+    transition: 0.5s ease;
+    will-change: transform;
+    transition: 0.5s, border-radius 0s;
+    border-radius: 0.44rem;
+    border-width: 1vh;
+    display: block;
+    width: auto;
+    aspect-ratio: 1/1;
+    cursor: pointer;
+    box-sizing: border-box;
 }
 .mainContent #bts-grid div{
-  justify-content: center;
-  align-items: end;
-  display: flex;
-  /* overflow: hidden; */
-  border: black;
-  border-style: solid;
-  border-width: 0.15rem;
+    justify-content: center;
+    align-items: end;
+    display: flex;
+    border: black;
+    border-style: solid;
+    border-width: 0.15rem;
 }
 .bts:hover{
     background-color: #DEC8DD !important;
     transform: scale(1.05);
     letter-spacing: 0.03em;
     transition: 0.5s;
-    /* margin: 2% !important; */
 }
 .head{
     background: #cea3f0;
@@ -120,12 +117,12 @@ body{
 
 #btn1:hover{background-image: url(../images/Profiles/discord.png);p{color: black;}}
 #btn2:hover{background-image: url(../images/Profiles/steam.jpg); color:black}
-#btn3:hover{background-image: url(../images/Profiles/spotify.png);p{colo1r: white;}}
+#btn3:hover{background-image: url(../images/Profiles/spotify.png);p{color: white;}}
 #btn4:hover{background-image: url(../images/Profiles/youtube.png);}
 #btn5:hover{background-image: url(../images/Profiles/mal.png);}
 
 button:hover::after {
-  opacity: 1;
+    opacity: 1;
 }
 .bts{
     background-repeat: no-repeat;
@@ -156,6 +153,6 @@ button:hover::after {
     src: url(../fonts/BIZ-UDGOTHICB.TTC);
 }
 @font-face {
-  font-family: "Kosugi Maru";
-  src:url(../fonts/KOSUGIMARU-REGULAR.TTF)
+    font-family: "Kosugi Maru";
+    src:url(../fonts/KOSUGIMARU-REGULAR.TTF)
 }

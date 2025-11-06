@@ -15,16 +15,17 @@ const uid = document.querySelector("#UID")
 const desc = document.querySelector("#description")
 const imageSelection = document.querySelector("#imageSelection")
 const img = document.createElement("img")
-const imageParent = document.querySelector("#images")
+const imageParent = document.querySelector("#blur")
 let images = []
 Object.entries(select.images).forEach(([key,img])=>{
     images.push(`url(../../../../images/Games/Gacha/${img}`)
 })
+document.title = `${select.title} | machucyst`
 favName.innerHTML = `${select.favorite.name}`
 desc.innerHTML = `${select.desc}`
 uid.innerHTML = `UID: ${select.uid}`
 imageSelection.src = images[0]
-imageParent.style.background = "black"
+imageParent.style.background = images[0]
 img.src = `url(../../../../images/Games/Gacha/${select.favorite.image}`
 favorite.prepend(img)
 const btn = [document.querySelector("#btnLeft"), document.querySelector("#btnRight")]
@@ -37,7 +38,7 @@ btn[0].addEventListener("click",function(){
         x--;
     }
     imageSelection.src = images[x]
-    // imageParent.style.background="black"
+    imageParent.style.background=images[x]
 })
 btn[1].addEventListener("click",function(){
     if(x==limit){
@@ -46,5 +47,5 @@ btn[1].addEventListener("click",function(){
         x++;
     }
     imageSelection.src = images[x]
-    // imageParent.style.background="black"
+    imageParent.style.background=images[x]
 })

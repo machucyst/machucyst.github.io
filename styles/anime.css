@@ -34,8 +34,6 @@
     grid-auto-flow: column;
     grid-auto-columns: min-content;
     scroll-snap-type: x mandatory;
-    /* scroll-behavior: smooth; */
-    /* transition: ease-in-out; */
     padding: 0 10vw; 
     gap: 0.5rem;
 }
@@ -46,16 +44,12 @@
 .bts{
     background-color: #cea3f0;
     position: relative;
-    /* transition: 0.4s ease-in; */
-    /* will-change: transform; */
-    /* transition: 0.5s, border-radius 0s; */
     border-radius: 0.44rem;
     border-width: 1vh;
     opacity: 0;
     transition: opacity 0.3s ease, transform 0.3s ease;
     width: 300px;
     height: auto;
-    /* cursor: pointer; */
     margin-top: 25%;
     margin-bottom: 25%;
 }
@@ -71,13 +65,12 @@
     display: flex;
 }
 .mainContent #selection-grid .bts{
-  justify-content: center;
-  align-items: end;
-  display: flex;
-  /* overflow: hidden; */
-  border: black;
-  border-style: solid;
-  border-width: 0.15rem;
+    justify-content: center;
+    align-items: end;
+    display: flex;
+    border: black;
+    border-style: solid;
+    border-width: 0.15rem;
 }
 .mainContent #selection-grid .bts .bts-contain{
     display: grid;
@@ -108,8 +101,8 @@
     width: auto; height: auto;
   }
   .mainContent #bts-grid div p{
-  line-break: strict;
-  font-size: 2vh;
+    line-break: strict;
+    font-size: 2vh;
   }
   #btn1{transform-origin: center left;    grid-row: 2/5;  grid-column: 1/3; justify-self: start;}
   #btn2{transform-origin: bottom center;  grid-row: 5;    grid-column: 1/6; justify-self: center;}
@@ -119,13 +112,14 @@
   #btn6{transform-origin: center right;   grid-row: 4/5;  grid-column: 3/6; justify-self: end;}
 
 }
+.bts::before,
+.bts::after{
+    transition: 0.5s ease-in-out !important
+}
 
 body{
     overflow: hidden scroll;
-    background-image: url(../images/1371663.png);
     background-repeat: no-repeat;
     background-size: cover;
     overflow: hidden !important;
-    margin: 0;
-    padding: 0;
 }
