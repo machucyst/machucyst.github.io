@@ -1,7 +1,7 @@
 import obj from '../../elementItems.js';
 import fn from '../../functions.js'
 import data from '../data.js'
-fn.toggleFunction(obj.headtext, "hover", "Socials","return?")
+fn.toggleFunction(obj.headtext, "hover", "Gachas","return?")
 obj.headtext.addEventListener("click",function(){
     window.location.href = location.origin
 })

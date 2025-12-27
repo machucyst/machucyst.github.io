@@ -27,6 +27,9 @@
     content: attr(data-default);
     cursor: default;
 }
+#headcont{
+    width: 30%;
+}
 
 .headText:hover{
     text-decoration: underline;

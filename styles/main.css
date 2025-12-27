@@ -40,7 +40,7 @@
 .bts{
   background-color: #cea3f0;
   position: relative;
-  transition: 0.5s ease;
+  transition: 0.25s ease;
   will-change: transform;
   transition: 0.5s, border-radius 0s;
   border-radius: 0.44rem;
