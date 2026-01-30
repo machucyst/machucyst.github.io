@@ -162,34 +162,21 @@ export default{
       },
       desc: "trying it out, seems fun",
     },
-    
-    
-  },
-  sample:{
-    anime:{
-        title: "title",
-        titleJP: "タイトル",
-        art1:"sample.webp",
-        art2:"sample2.webp"
-    //art1 -> artN
-  },
-  games:{
-      thumbnail:"thumbnail-d.webp",
-      title: "タイトル",
-      color: "#f4e4a4",
-      uid: "XXXXX",
+    8:{
+      thumbnail:"ake-ddd.png",
+      title:"Arknights Endfield",
+      color:"gray",
+      uid:"4505320934",
       favorite:{
-        image:"John.webp",
-        name:"John Character",
+        image:"Endmin.png",
+        name:"Endmin",
       },
+      desc:"test",
       images:{
-        1:"sample1.webp ",
-        2:"sample2.webp",
-        3:"sample3.webp",
-        4:"sample4.webp",
-        //images 1->N
-      },
-      desc: "sample",
+        1:"placeholder.png",
+        2:"placeholder2.png"
+      }
+    }
   }
-  }
+  
 }
