@@ -27,13 +27,16 @@ export default{
       titleJP: "ホリミヤ"
     },
     7 : {
-      title: "John Anime"
+      title: "John Anime",
+      titleJP: "ジョーンアニメ"
     },
     8 : {
-      title: "John Anime"
+      title: "John Anime",
+      titleJP:"ジョーンアニメ"
     },
     9 : {
-      title: "test"
+      title: "test",
+      titleJP:"テッスート"
     }
   },
   games : {
@@ -52,7 +55,7 @@ export default{
         3:"fgo3.webp",
         4:"fgo4.webp",
       },
-      desc: "I have over 1850 logins, i could be investing my life somewhere else but whatever. NP6 Reines in the span of 4 years now im looking for my next target. Maybe Gensai since she looks cool",
+      desc: "I have over 1850 logins, i could be investing my life somewhere else but whatever. NP6 Reines in the span of 4 years. I'm aiming for typhon lads raaaaaaaaah",
     },
     2 : {
       thumbnail:"uma-d.webp",
