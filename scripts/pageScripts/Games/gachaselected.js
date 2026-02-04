@@ -5,7 +5,7 @@ const params = new URLSearchParams(window.location.search)
 // document.getElementById("text").innerHTML = params.get("selected")
 fn.toggleFunction(obj.headtext, "hover", "machucyst","return?")
 obj.headtext.addEventListener("click",function(){
-    window.location.href = location.origin + "/pages/selectedgame/gacha.html"
+    history.back()
 })
 let select = data.games[params.get("selected")]
 const grid = document.querySelector("#bts-grid");
@@ -22,7 +22,7 @@ const selectedImage = document.querySelector("#selectedImage")
 
 let images = []
 Object.entries(select.images).forEach(([key,img])=>{
-    images.push(`url(../../../../images/Games/Gacha/${img}`)
+    images.push(`url(../../../../images/Games/Gacha/${select.imageDir}/${img}`)
 })
 
 document.title = `${select.title} | machucyst`
@@ -33,7 +33,7 @@ uid.innerHTML = `UID: ${select.uid}`
 imageSelection.src = images[0]
 imageParent.style.background = images[0]
 
-img.src = `url(../../../../images/Games/Gacha/${select.favorite.image}`
+img.src = `url(../../../../images/Games/Gacha/${select.imageDir}/${select.favorite.image}`
 favorite.prepend(img)
 const btn = [document.querySelector("#btnLeft"), document.querySelector("#btnRight")]
 let x = 0;

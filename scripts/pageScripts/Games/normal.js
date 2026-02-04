@@ -3,7 +3,7 @@ import fn from '../../functions.js'
 import data from '../data.js'
 fn.toggleFunction(obj.headtext, "hover", "Socials","return?")
 obj.headtext.addEventListener("click",function(){
-    window.location.href = location.origin
+    history.back()
 })
 
 const grid = document.querySelector("#bts-grid");

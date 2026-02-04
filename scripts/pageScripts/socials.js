@@ -2,7 +2,7 @@ import obj from '../elementItems.js';
 import fn from '../functions.js'
 fn.toggleFunction(obj.headtext, "hover", "Socials","return?")
 obj.headtext.addEventListener("click",function(){
-    window.location.href = location.origin
+    history.back()
 })
 
 for (let i = 0; i < obj.btn.length; i++) {
@@ -26,6 +26,9 @@ for (let i = 0; i < obj.btn.length; i++) {
                     window.open("https://myanimelist.net/profile/Machucyst", "_blank")
                 break;
                 case 5:
+                    window.open("https://anilist.co/user/machucyst/", "_blank")
+                break;
+                case 6:
                     window.location.href = Origin + "anime.html"
                 break;
             }

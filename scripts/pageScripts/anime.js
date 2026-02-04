@@ -8,7 +8,7 @@ import ani from './data.js'
 
 fn.toggleFunction(obj.headtext, "hover", "Anime","return?")
 obj.headtext.addEventListener("click",function(){
-  window.location.href = location.origin +"/index.html"
+  history.back()
 })
 const grid = document.querySelector("#selection-grid");
 grid.innerHTML = ""
@@ -66,7 +66,7 @@ const observer = new IntersectionObserver(test => {
     }
   });
 }, 
-{root: document.getElementById("selection-grid"),threshold: 0.5,rootMargin: "-100px"});
+{root: document.getElementById("selection-grid"),threshold: 0.6,rootMargin: "-1000px"});
 bts.forEach((card) =>{
   observer.observe(card)
 })

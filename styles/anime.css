@@ -12,6 +12,7 @@
 .clickable:hover{
     background-color: #DEC8DD !important;
     letter-spacing: 0.03em;
+    /* transition: 0.2s; */
 }
 #loading{
     height: 100%;

@@ -45,6 +45,7 @@ export default{
       title: "Fate/Grand Order",
       color: "#f4e4a4",
       uid: "589 459 291",
+      imageDir:"fgo",
       favorite:{
         image:"Reines.webp",
         name:"Sima Yi (Reines)",
@@ -62,6 +63,7 @@ export default{
       title: "Uma Musume: Pretty Derby",
       color: "pink",
       uid: "508 817 543 194",
+      imageDir:"uma",
       favorite:{
         image:"NiceNature.webp",
         name:"Nice Nature",
@@ -77,6 +79,7 @@ export default{
       title: "Blue Archive",
       color: "rgb(52, 191, 238)",
       uid: "1889581",
+      imageDir:"ba",
       favorite:{
         image:"Aoba.webp",
         name:"Aoba",
@@ -94,6 +97,7 @@ export default{
       title: "Honkai: Star Rail",
       color: "white",
       uid: "ID",
+      imageDir:"hsr",
       favorite:{
         image:"url",
         name:"Seele",
@@ -109,6 +113,7 @@ export default{
       title: "The Battle Cats",
       color: "red",
       uid: "None",
+      imageDir:"bc",
       favorite:{
         image:"kasli.webp",
         name:"Kasli the Scourge",
@@ -123,6 +128,7 @@ export default{
       title: "Arknights",
       color: "cyan",
       uid: "38605704",
+      imageDir:"ak",
       favorite:{
         image:"Irene.webp",
         name:"Irene",
@@ -138,6 +144,7 @@ export default{
       title:"Girls Front Line 2: EXILIUM",
       color:"#CEB042",
       uid:"350222",
+      imageDir:"gfle",
       favorite:{
         image:"Cheyanne.webp",
         name:"Cheyanne"
@@ -154,6 +161,7 @@ export default{
       title:"Stella Sora",
       color:"lightblue",
       uid:"700373424",
+      imageDir:"ss",
       favorite:{
         image:"Tyrant.webp",
         name:"Tyrant"
@@ -167,16 +175,17 @@ export default{
     },
     8:{
       thumbnail:"ake-ddd.png",
-      title:"Arknights Endfield",
+      title:"Arknights: Endfield",
       color:"gray",
       uid:"4505320934",
+      imageDir:"ake",
       favorite:{
         image:"Endmin.png",
         name:"Endmin",
       },
       desc:"test",
       images:{
-        1:"placeholder.png",
+        1:"ake1.png",
         2:"placeholder2.png"
       }
     }

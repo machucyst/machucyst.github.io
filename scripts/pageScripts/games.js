@@ -2,7 +2,7 @@ import obj from '../elementItems.js';
 import fn from '../functions.js'
 fn.toggleFunction(obj.headtext, "hover", "Socials","return?")
 obj.headtext.addEventListener("click",function(){
-    window.location.href = location.origin
+    history.back()
 })
 
 for (let i = 0; i < obj.btn.length; i++) {

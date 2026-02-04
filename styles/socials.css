@@ -81,12 +81,15 @@ body{
 #btn3{background-image: url(../images/Profiles/spotify-d.png);}
 #btn4{background-image: url(../images/Profiles/youtube-d.png);}
 #btn5{background-image: url(../images/Profiles/mal-d.png);}
+#btn6{background-image: url(../images/Profiles/anilist-d.png);}
 
-#btn1:hover{background-image: url(../images/Profiles/discord.png);  p{color: rgb(90,101,213)    ;text-shadow: -1px -1px 0 black,1px -1px 0 black,-1px  1px 0 black,1px  1px 0 black  };border-color: rgb(90,101,213) !important;}
+
+#btn1:hover{background-image: url(../images/Profiles/discord.webp);  p{color: rgb(90,101,213)    ;text-shadow: -1px -1px 0 black,1px -1px 0 black,-1px  1px 0 black,1px  1px 0 black  };border-color: rgb(90,101,213) !important;}
 #btn2:hover{background-image: url(../images/Profiles/steam.jpg);    p{color:rgb(58,123,171)     ;text-shadow: -1px -1px 0 black,1px -1px 0 black,-1px  1px 0 black,1px  1px 0 black  };border-color: rgb(58,123,171)   !important;}
 #btn3:hover{background-image: url(../images/Profiles/spotify.png);  p{color: rgb(102,212,110)   ;text-shadow: -1px -1px 0 black,1px -1px 0 black,-1px  1px 0 black,1px  1px 0 black  };border-color: rgb(102,212,110)!important;}
 #btn4:hover{background-image: url(../images/Profiles/youtube.png);  p{color:rgb(186, 50, 45)    ;text-shadow: -1px -1px 0 black,1px -1px 0 black,-1px  1px 0 black,1px  1px 0 black  };border-color: rgb(186,50,45)  !important;}
 #btn5:hover{background-image: url(../images/Profiles/mal.png);      p{color: rgb(54, 80, 157)   ;text-shadow: -1px -1px 0 black,1px -1px 0 black,-1px  1px 0 black,1px  1px 0 black  };border-color: rgb(54,80,157)  !important;}
+#btn6:hover{background-image: url(../images/Profiles/anilist.png);      p{color: rgb(54, 80, 157)   ;text-shadow: -1px -1px 0 black,1px -1px 0 black,-1px  1px 0 black,1px  1px 0 black  };border-color: rgb(54,80,157)  !important;}
 
 button:hover::after {
     opacity: 1;
