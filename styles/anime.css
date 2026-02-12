@@ -43,13 +43,15 @@
     height: 0;
 }
 .bts{
-    background-color: #cea3f0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
     position: relative;
     border-radius: 0.44rem;
     border-width: 1vh;
     opacity: 0;
     transition: opacity 0.3s ease, transform 0.3s ease;
-    width: 300px;
+    width: 450px;
     height: auto;
     margin-top: 25%;
     margin-bottom: 25%;
