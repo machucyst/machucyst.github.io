@@ -10,11 +10,40 @@ fn.toggleFunction(obj.headtext, "hover", "Anime","return?")
 obj.headtext.addEventListener("click",function(){
   history.back()
 })
+const query = `
+  query ($name: String) {
+    User(name: $name) {
+      name
+      favourites {
+        anime {
+          nodes {
+            id
+            title {
+              romaji
+              english
+              native
+            }
+            coverImage{
+              extraLarge
+              large
+              medium
+            }
+            bannerImage
+          }
+        }
+      }
+    }
+  }
+`;
+const userData = await getFavorites();
 const grid = document.querySelector("#selection-grid");
 grid.innerHTML = ""
-Object.entries(ani.anime).forEach(([key,anime])=>{
-  const img1 = `url(../../images/${anime.art1})`
-  const img2 = `url(../../images/${anime.art2})`
+
+console.log(userData)
+console.log(userData.favourites.anime)
+Object.entries(userData.favourites.anime.nodes).forEach(([key,nodes])=>{
+  const img1 = `url(${nodes.coverImage.extraLarge})`
+  // const img2 = `url(../../images/${ nodes.art2})`
 
 
 
@@ -24,16 +53,16 @@ Object.entries(ani.anime).forEach(([key,anime])=>{
   div2.classList.add("bts-contain");
   const mainText = document.createElement('p');
   mainText.classList.add("mainText");
-  mainText.innerText = `${anime.title}`
+  mainText.innerText = `${nodes.title.english}`
   const subText = document.createElement('p');
   div.style.backgroundImage = img1;
   div.addEventListener("mouseover", ()=>{
-    div.style.backgroundImage = img2;
+    // div.style.backgroundImage = img2;
   })
   div.addEventListener("mouseleave", ()=>{
     div.style.backgroundImage = img1;
   })
-  subText.innerText = (`${anime.titleJP}`) == "undefined" ? parseInt(key)+.1 : (`${anime.titleJP}`)
+  subText.innerText = (`${nodes.title.native}`) == "undefined" ? parseInt(key)+.1 : (`${nodes.title.native}`)
   subText.classList.add("subText");
   div2.appendChild(mainText)
   div2.appendChild(subText)
@@ -116,3 +145,20 @@ function smoothScroll() {
     isScrolling = false;
   }
 }
+async function getFavorites() {
+  const response = await fetch("https://graphql.anilist.co", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      query,
+      variables: { name: "machucyst" }
+    })
+  });
+
+  const data = await response.json();
+
+  return data.data.User;
+}
+

@@ -27,7 +27,7 @@ export default{
       titleJP: "ホリミヤ"
     },
     7 : {
-      title: "John Anime",
+      title: "Cosmic Princess Kaguya",
       titleJP: "ジョーンアニメ"
     },
     8 : {
