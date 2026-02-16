@@ -10,32 +10,9 @@ fn.toggleFunction(obj.headtext, "hover", "Anime","return?")
 obj.headtext.addEventListener("click",function(){
   history.back()
 })
-const query = `
-  query ($name: String) {
-    User(name: $name) {
-      name
-      favourites {
-        anime {
-          nodes {
-            id
-            title {
-              romaji
-              english
-              native
-            }
-            coverImage{
-              extraLarge
-              large
-              medium
-            }
-            bannerImage
-          }
-        }
-      }
-    }
-  }
-`;
-const userData = await getFavorites();
+
+const animeData = await ani.anime;
+const userData = animeData.User
 const grid = document.querySelector("#selection-grid");
 grid.innerHTML = ""
 
@@ -45,7 +22,7 @@ Object.entries(userData.favourites.anime.nodes).forEach(([key,nodes])=>{
   const img1 = `url(${nodes.coverImage.extraLarge})`
   // const img2 = `url(../../images/${ nodes.art2})`
 
-
+  console.log(userData.avatar)
 
   const div = document.createElement('div')
   div.classList.add("bts");
@@ -100,17 +77,6 @@ bts.forEach((card) =>{
   observer.observe(card)
 })
 
-
-
-
-
-
-
-
-
-
-
-
 function selectAnime(index) {
   index++
   const anime = ani.anime[index];
@@ -145,20 +111,3 @@ function smoothScroll() {
     isScrolling = false;
   }
 }
-async function getFavorites() {
-  const response = await fetch("https://graphql.anilist.co", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify({
-      query,
-      variables: { name: "machucyst" }
-    })
-  });
-
-  const data = await response.json();
-
-  return data.data.User;
-}
-

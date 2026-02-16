@@ -1,44 +1,4 @@
 export default{
-  anime : {
-    1 : {
-      title: "Nisekoi",
-      titleJP: "ニセコイ",
-      art1:"1371663.webp",
-      art2:"1371664.webp"
-    },
-    2 : {
-      title: "Mono",
-      titleJP: "モノ"
-    },
-    3 : {
-      title: "Bocchi the Rock",
-      titleJP: "ぼっちざろっく"
-    },
-    4 : {
-      title: "Make Heroine ga Oosugiru",
-      titleJP: "負けへロイネが多すぎる"
-    },
-    5 : {
-      title: "Girls Band Cry",
-      titleJP: "ガールズバンドクライ"
-    },
-    6 : {
-      title: "Horimiya",
-      titleJP: "ホリミヤ"
-    },
-    7 : {
-      title: "Cosmic Princess Kaguya",
-      titleJP: "ジョーンアニメ"
-    },
-    8 : {
-      title: "John Anime",
-      titleJP:"ジョーンアニメ"
-    },
-    9 : {
-      title: "test",
-      titleJP:"テッスート"
-    }
-  },
   games : {
     1 : {
       thumbnail:"fgo-d.webp",
@@ -189,7 +149,52 @@ export default{
         2:"placeholder2.png"
       }
     }
-  }
-  
+  },
+  anime : getFavorites()
 }
-//AQDy1sycpz9IB8BDaUbXUs750jMnOHR9V7hzVv2tpFcIUzeB4BHHEqA7QNgAV40Sh4e46FwIrXjYyAILmVfJxWs9jNg0n1AUwKkYn8U47b2JZzx1vq8CDWa9Fztm7eDeLINVe0p6M049VqwUAjG_CXRdWDzsNdqKJCKfs7G
+async function getFavorites() {
+    const query = `
+    query ($name: String) {
+      User(name: $name) {
+        name
+        avatar {
+          large
+        }
+        favourites {
+          anime {
+            nodes {
+              id
+              title {
+                romaji
+                english
+                native
+              }
+              coverImage{
+                extraLarge
+                large
+                medium
+              }
+              bannerImage
+            }
+          }
+        }
+        
+      }
+    }
+  `;
+  const response = await fetch("https://graphql.anilist.co", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      query,
+      variables: { name: "machucyst" }
+    })
+  });
+
+  const data = await response.json();
+
+  return data.data;
+}
+
