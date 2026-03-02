@@ -6,95 +6,49 @@ import ani from './data.js'
 
 
 
-fn.toggleFunction(obj.headtext, "hover", "Anime","return?")
-obj.headtext.addEventListener("click",function(){
+fn.toggleFunction(obj.headtext, "hover", "Anime", "return?")
+obj.headtext.addEventListener("click", function () {
   history.back()
 })
 
 const animeData = await ani.anime;
 const userData = animeData.User
 const grid = document.querySelector("#selection-grid");
-grid.innerHTML = ""
 
-console.log(userData)
-console.log(userData.favourites.anime)
-Object.entries(userData.favourites.anime.nodes).forEach(([key,nodes])=>{
-  const img1 = `url(${nodes.coverImage.extraLarge})`
-  // const img2 = `url(../../images/${ nodes.art2})`
+let btnFav = document.querySelector("#btnFavorite")
+let btnAnime = document.querySelector("#btnAnime")
+let btnManga = document.querySelector("#btnManga")
+let btns = [btnFav, btnAnime, btnManga]
 
-  console.log(userData.avatar)
+for (let i = 0; i < btns.length; i++) {
+  // alert(btns[i])
+  btns[i].addEventListener("click", function () {
+    let Origin = location.origin + "/pages/anime2.html"
+    switch (i) {
+      case 0:
+        window.location.href = Origin + "?selected=Favorite"
+        break;
+      case 1:
+        window.location.href = Origin + "?selected=Anime"
+        break;
+      case 2:
+        window.location.href = Origin + "?selected=Manga"
+        break;
+      default:
+        alert("Error")
+        break;
 
-  const div = document.createElement('div')
-  div.classList.add("bts");
-  const div2 = document.createElement('div');
-  div2.classList.add("bts-contain");
-  const mainText = document.createElement('p');
-  mainText.classList.add("mainText");
-  mainText.innerText = `${nodes.title.english}`
-  const subText = document.createElement('p');
-  div.style.backgroundImage = img1;
-  div.addEventListener("mouseover", ()=>{
-    // div.style.backgroundImage = img2;
-  })
-  div.addEventListener("mouseleave", ()=>{
-    div.style.backgroundImage = img1;
-  })
-  subText.innerText = (`${nodes.title.native}`) == "undefined" ? parseInt(key)+.1 : (`${nodes.title.native}`)
-  subText.classList.add("subText");
-  div2.appendChild(mainText)
-  div2.appendChild(subText)
-  div.appendChild(div2)
-  grid.appendChild(div)
-})
-const bts = Array.from(document.querySelectorAll(".bts"));
-const handlers = new WeakMap();
-
-const observer = new IntersectionObserver(test => {
-  test.forEach(entry => {
-    const et = entry.target;
-    const index = bts.indexOf(et);
-    
-    et.classList.toggle("clickable", entry.isIntersecting);
-    
-    if (entry.isIntersecting) {
-      if (!handlers.has(et)) {
-        handlers.set(et, () => selectAnime(index));
-      }
-      if (!et._hasClickListener) {
-        et.addEventListener("click", handlers.get(et));
-        et._hasClickListener = true;
-      }
-    } else {
-      if (et._hasClickListener) {
-        et.removeEventListener("click", handlers.get(et));
-        et._hasClickListener = false;
-      }
     }
-  });
-}, 
-{root: document.getElementById("selection-grid"),threshold: 0.6,rootMargin: "-1000px"});
-bts.forEach((card) =>{
-  observer.observe(card)
-})
-
-function selectAnime(index) {
-  index++
-  const anime = ani.anime[index];
-  if (anime) {
-    window.location.href = location.origin + "/pages/selectedanime/selectedAnime.html?selected=" + `${anime.title}`
-  } else {
-    console.log(`Anime with ID ${index} not found.`);
-  }
+  })
 }
-
 fn.enableScroll(false)
 let scrollVelocity = 0;
 let isScrolling = false;
 
 grid.addEventListener("wheel", function (e) {
   e.preventDefault();
-  scrollVelocity += e.deltaY*0.25;
-  
+  scrollVelocity += e.deltaY * 0.25;
+
   if (!isScrolling) {
     isScrolling = true;
     requestAnimationFrame(smoothScroll);

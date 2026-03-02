@@ -1,4 +1,7 @@
 import obj from './elementItems.js';
+import gsap from "https://cdn.jsdelivr.net/npm/gsap@3/+esm";
+import ScrollTrigger from "https://cdn.jsdelivr.net/npm/gsap@3/ScrollTrigger/+esm";
+
 export default{
     isMobile() {
         return /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent) || window.innerWidth <= 768;

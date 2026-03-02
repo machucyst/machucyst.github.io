@@ -182,8 +182,51 @@ async function getFavorites() {
               bannerImage
             }
           }
+          manga{
+            nodes{
+              id
+              title{
+                romaji
+                english
+                native
+              }
+              coverImage{
+                extraLarge
+                large
+                medium
+              }
+            }
+          }
         }
         
+      }
+      animeList: MediaListCollection(userName: $name, type: ANIME){
+        lists{
+          entries{
+            status
+              media{
+                title{
+                  romaji
+                  english
+                  native
+                }
+              }
+          }
+        }
+      }
+      mangaList: MediaListCollection(userName: $name, type: MANGA){
+        lists{
+          entries{
+            status
+              media{
+                title{
+                  romaji
+                  english
+                  native
+                }
+              }
+          }
+        }
       }
     }
   `;
