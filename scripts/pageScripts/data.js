@@ -1,4 +1,5 @@
 export default{
+  anime : getFavorites(),
   games : {
     1 : {
       thumbnail:"fgo-d.webp",
@@ -63,8 +64,8 @@ export default{
         name:"Seele",
       },
       images:{
-        1:"placeholder.webp ",
-        2:"placeholder2.webp "
+        1:"../../../ph.webp ",
+        2:"../../../ph2.webp "
       },
       desc: "i quit, and ill come back after a while to see if i can still do the endgames",
     },
@@ -94,8 +95,8 @@ export default{
         name:"Irene",
       },
       images:{
-        1:"placeholder.webp ",
-        2:"placeholder2.webp "
+        1:"../../../ph.webp ",
+        2:"../../../ph2.webp "
       },
       desc: "i advocate for tower offense meta",
     },
@@ -111,7 +112,7 @@ export default{
       },
       images:{
         1:"gfle1.webp ",
-        2:"placeholder2.webp "
+        2:"../../../ph2.webp "
       },
       desc: "i dont think ill resist the urge to not pay for cheyanne's skin"
 
@@ -140,18 +141,22 @@ export default{
       uid:"4505320934",
       imageDir:"ake",
       favorite:{
-        image:"Endmin.png",
+        image:"Endmin.webp",
         name:"Endmin",
       },
-      desc:"test",
+      desc:"THE FACTORY MUST GROWWWWWWWWWWWWWWW",
       images:{
-        1:"ake1.png",
-        2:"placeholder2.png"
+        1:"ake1.webp",
+        2:"../../../ph2.webp"
       }
     }
   },
-  anime : getFavorites()
+  
 }
+
+
+
+
 async function getFavorites() {
     const query = `
     query ($name: String) {

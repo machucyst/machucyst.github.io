@@ -56,5 +56,7 @@ body{
     padding: 0;
     overflow-x: hidden;
     overflow-y: hidden;
-    background-image: url(../images/1371663.png);
+    background-image: url(../images/baseBG.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
