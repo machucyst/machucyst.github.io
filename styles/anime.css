@@ -15,13 +15,15 @@
     /* transition: 0.2s; */
 }
 #loading{
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    top:0;
-    left:0;
-    background-color: black;
-    transition: 2s ease-out opacity 1s;
+    margin-left: 50%;
+    margin-top:auto;
+    margin-bottom:auto;
+    img{
+        height: 400px;
+    }
+    h2{
+       margin-left: 50%;
+    }
 }
 .head div{
     padding-left: 1vw;
@@ -56,16 +58,20 @@
     margin-top: 25%;
     margin-bottom: 25%;
 }
-.mainContent{
-    margin-left: 5vw;
-    margin-right: 5vw;
-    background: #cea3f0;
-    background: linear-gradient(8deg, rgba(206, 163, 240, 1) 0%, rgba(222, 200, 221, 1) 50%, rgba(255, 247, 247, 1) 100%);
-    margin-top: 0;
-    min-height: 96vh;
-    height: fit-content;
-    width:auto;
-    display: flex;
+.bts-separator{
+    /* height: 100%; */
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 2vw;
+    margin-right: 2vw;
+    div img{
+        width: 40vw;
+        border-top-left-radius: 1vw;
+        border-bottom-left-radius: 1vw;
+        border-top-right-radius: 1vw;
+        border-bottom-right-radius: 1vw;
+    }    
+    grid-column: span 5;
 }
 .mainContent #selection-grid .bts{
     justify-content: center;
@@ -91,6 +97,7 @@
 .mainText{
     font-size: clamp(1.5rem, 2vh, 2vh);
     transition: 0.3s;
+    color: black;
 }
 .subText{
     font-size: clamp(1rem, 0.5vh, 1vh);

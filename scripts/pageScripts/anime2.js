@@ -1,10 +1,6 @@
 import obj from '../elementItems.js';
 import fn from '../functions.js'
 import ani from './data.js'
-import Vibrant from 'https://cdn.jsdelivr.net/npm/node-vibrant@3/+esm';
-
-
-
 
 fn.toggleFunction(obj.headtext, "hover", "Anime", "return?")
 obj.headtext.addEventListener("click", function () {
@@ -15,9 +11,10 @@ const data = await ani.anime;
 const userData = data.User
 const animeData = data.animeList
 const mangaData = data.mangaList
+const txtborder = "-1px -1px 0 #464646,1px -1px 0 #464646,-1px  1px 0 #464646,1px  1px 0 #464646"
+
 let dataLists = []
 const grid = document.querySelector("#selection-grid");
-grid.innerHTML = ""
 
 const params = new URLSearchParams(window.location.search)
 let info = params.get("selected")
@@ -27,63 +24,77 @@ switch (info) {
     dataLists[1] = userData.favourites.manga.nodes
     break;
   case "Anime":
-    dataLists[0] = userData.anime
+    Object.entries(animeData.lists).forEach(([key]) => {
+      dataLists.push(animeData.lists[key].entries)
+    })
+    console.log(dataLists)
+    break;
+  case "Manga":
+    Object.entries(mangaData.lists).forEach(([key]) => {
+      dataLists.push(mangaData.lists[key].entries)
+    })
+    break;
 }
-for (let i = 0; i < dataLists.length; i++) {
-  Object.entries(dataLists[i]).forEach(([key, nodes]) => {
-    const imgUrl = nodes.coverImage?.extraLarge
-     
-    const div = document.createElement('div')
-    div.classList.add("bts");
-    const div2 = document.createElement('div');
-    div2.classList.add("bts-contain");
-    const mainText = document.createElement('p');
-    mainText.classList.add("mainText");
-    // mainText.style.color = finalColor
-    mainText.innerText = ((`${nodes.title.english}`) == "undefined" || (`${nodes.title.english}`) == "null") ? (`${nodes.title.romaji}`) : (`${nodes.title.english}`)
-    const subText = document.createElement('p');
-    div.style.backgroundImage = `url(${imgUrl})`;
-    div.addEventListener("mouseover", () => {
-      // div.style.backgroundImage = img2;
-    })
-    div.addEventListener("mouseleave", () => {
-      // div.style.backgroundImage = img;
-    })
-    try{
+try {
+  if (dataLists[0]) grid.innerHTML = ""
+  for (let i = 0; i < dataLists.length; i++) {
+    Object.entries(dataLists[i]).forEach(([key, nodes]) => {
+      switch (info) {
+        case "Anime":
+        case "Manga":
+          nodes = nodes.nodes
+          break;
+      }
+      const imgUrl = nodes.coverImage?.extraLarge
+      const div = document.createElement('div')
+      const div2 = document.createElement('div');
+      const mainText = document.createElement('p');
+      const subText = document.createElement('p');
+      div.classList.add("bts");
+      div.classList.add("observe");
+      div.style.backgroundImage = `url(${imgUrl})`;
+      div.addEventListener("mouseover", () => {
+        // div.style.backgroundImage = img2;
+      })
+      div.addEventListener("mouseleave", () => {
+        // div.style.backgroundImage = img;
+      })
 
-      Vibrant.from(`${imgUrl}`).getPalette().then(p => {
-        console.log(p)
-        const swatch = palette.Vibrant || palette.Muted || palette.DarkVibrant
-        if (swatch) mainText.style.color = p.Vibrant.getHex()
-        }).catch(err =>
-      console.log(err,nodes.coverImage.extraLarge)
-    )
-    }catch(err){
-      console.log(err)
-    }
-    console.log(userData.avatar)
-    // alert("test")
-    
-    subText.innerText = (`${nodes.title.native}`) == "undefined" ? parseInt(key) + .1 : (`${nodes.title.native}`)
-    subText.classList.add("subText");
-    div2.appendChild(mainText)
-    div2.appendChild(subText)
-    div.appendChild(div2)
-    grid.appendChild(div)
-  })
-  if (i+1 != dataLists.length) {
-    const div = document.createElement('div')
-    div.classList.add("bts");
-    const div2 = document.createElement('div');
-    div2.classList.add("bts-contain");
-    const mainText = document.createElement('p');
-    mainText.classList.add("mainText");
-    mainText.innerText = `temporary separator`
-    const subText = document.createElement('p');
-    div2.appendChild(mainText)
-    div.appendChild(div2)
-    grid.appendChild(div)
+      div2.classList.add("bts-contain");
+
+      mainText.classList.add("mainText");
+      mainText.style.textShadow = txtborder
+      mainText.innerText = ((`${nodes.title.english}`) == "undefined" || (`${nodes.title.english}`) == "null") ? (`${nodes.title.romaji}`) : (`${nodes.title.english}`)
+
+      subText.style.textShadow = txtborder
+      subText.innerText = (`${nodes.title.native}`) == "undefined" ? parseInt(key) + .1 : (`${nodes.title.native}`)
+      subText.classList.add("subText");
+
+      div2.appendChild(mainText)
+      div2.appendChild(subText)
+
+      div.appendChild(div2)
+
+      grid.appendChild(div)
+    })
+    if(info=="Favorite"){
+
+      if (i + 1 != dataLists.length) {
+        const div = document.createElement('div')
+        div.classList.add("observe");
+        div.classList.add("bts-separator");
+        const img = new Image()
+        img.src = "../images/separator.gif"
+        const div2 = document.createElement('div');
+        div2.classList.add("bts-contain");
+        div2.appendChild(img)
+        div.appendChild(div2)
+        grid.appendChild(div)
+      }
+    }Z
   }
+} catch (e) {
+
 }
 const bts = Array.from(document.querySelectorAll(".bts"));
 const handlers = new WeakMap();
@@ -111,7 +122,7 @@ const observer = new IntersectionObserver(test => {
     }
   });
 },
-  { root: document.getElementById("selection-grid"), threshold: 0.6, rootMargin: "-1000px" });
+  { root: document.getElementById("selection-grid"), threshold: 0.2 });
 bts.forEach((card) => {
   observer.observe(card)
 })

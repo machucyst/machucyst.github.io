@@ -50,21 +50,13 @@
   border-width: 1vh;
   display: block;
   width: auto;
-  padding: 20%;
+  padding: 10%;
   place-self: center center;
   aspect-ratio: 1/1;
   cursor: pointer;
   box-sizing: border-box;
 }
-.mainContent #bts-grid div{
-  justify-content: center;
-  align-items: end;
-  display: flex;
-  /* overflow: hidden; */
-  border: black;
-  border-style: solid;
-  border-width: 0.15rem;
-}
+
 .bts:hover{
     background-color: #DEC8DD !important;
     transform: scale(1.05);
@@ -90,15 +82,4 @@ button:hover::after {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-}
-.mainContent{
-    margin-left: 5vw;
-    margin-right: 5vw;
-    background: #cea3f0;
-    background: linear-gradient(8deg, rgba(206, 163, 240, 1) 0%, rgba(222, 200, 221, 1) 50%, rgba(255, 247, 247, 1) 100%);
-    margin-bottom: 2vh;
-    min-height: 92vh;
-    height: fit-content;
-    width:auto;
-    display: flex;
 }

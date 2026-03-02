@@ -11,8 +11,6 @@ obj.headtext.addEventListener("click", function () {
   history.back()
 })
 
-const animeData = await ani.anime;
-const userData = animeData.User
 const grid = document.querySelector("#selection-grid");
 
 let btnFav = document.querySelector("#btnFavorite")

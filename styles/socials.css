@@ -83,7 +83,6 @@ body{
 #btn5{background-image: url(../images/Profiles/mal-d.png);}
 #btn6{background-image: url(../images/Profiles/anilist-d.png);}
 
-
 #btn1:hover{background-image: url(https://cyst-avatar-api.vercel.app/api/discord);      p{color: rgb(90,101,213)    ;text-shadow: -1px -1px 0 black,1px -1px 0 black,-1px  1px 0 black,1px  1px 0 black  };border-color: rgb(90,101,213) !important;}
 #btn2:hover{background-image: url(https://cyst-avatar-api.vercel.app/api/steam);        p{color:rgb(58,123,171)     ;text-shadow: -1px -1px 0 black,1px -1px 0 black,-1px  1px 0 black,1px  1px 0 black  };border-color: rgb(58,123,171) !important;}
 #btn3:hover{background-image: url(https://cyst-avatar-api.vercel.app/api/spotify);      p{color: rgb(102,212,110)   ;text-shadow: -1px -1px 0 black,1px -1px 0 black,-1px  1px 0 black,1px  1px 0 black  };border-color: rgb(102,212,110)!important;}
@@ -93,10 +92,14 @@ body{
 
 button:hover::after {
     opacity: 1;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
 }
 .bts{
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center center;
 }
 
 .mainContent{

@@ -6,7 +6,7 @@ export default{
         debi("btn5"), debi("btn6"), 
     ],
     headtext:debi("headText"),
-    loadingEl:debi("loading"),
+    // loadingEl:debi("loading"),
     btsGrid:debi("bts-grid"),
     btsGridGrid:debi("selection-grid")
 

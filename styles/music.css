@@ -1,3 +1,29 @@
-h1{
-    color:pink;
+#bts-grid{
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  grid-template-rows: repeat(1,0.5fr);
+  margin-top: 2rem;
+  row-gap: 1rem;
+  width: 100%; 
+  aspect-ratio: 1;
+  place-items: center center;
+  box-sizing: border-box;
+  align-items: stretch;
+  transition: 0.4s;
+}
+.bts{
+  background-color: #cea3f0;
+  position: relative;
+  transition: 0.5s ease;
+  will-change: transform;
+  transition: 0.5s, border-radius 0s;
+  border-radius: 0.44rem;
+  border-width: 1vh;
+  display: block;
+  width: auto;
+  padding: 20%;
+  place-self: center center;
+  aspect-ratio: 1/1;
+  cursor: pointer;
+  box-sizing: border-box;
 }

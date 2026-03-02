@@ -9,9 +9,9 @@ export default{
     loadPage(){
         window.addEventListener("load", function(){
         
-          obj.loadingEl.style.opacity = "0";
+          // obj.loadingEl.style.opacity = "0";
           setTimeout(() => {
-            obj.loadingEl.style.display = "none";
+            // obj.loadingEl.style.display = "none";
           }, 3000);
         })
     },
@@ -29,7 +29,7 @@ export default{
     },
     enableScroll(bool){
       gsap.registerPlugin(ScrollTrigger);
-      gsap.utils.toArray(".bts").forEach((item) => {
+      gsap.utils.toArray(".observe").forEach((item) => {
         gsap.fromTo(
           item,
           { opacity: 0, y: 100 },
@@ -41,7 +41,7 @@ export default{
               scroller: "#selection-grid",
               horizontal: true,
               start: "left 100%",     // when item's left hits container's right
-              end: "left 70%",       // when item's right hits container's left
+              end: "left 75%",       // when item's right hits container's left
               scrub: true,
               markers:bool,
               // toggleActions: "restart pause reverse pause"

@@ -5,7 +5,7 @@ obj.headtext.addEventListener("click",function(){
     history.back()
 })
 
-for (let i = 0; i < obj.btn.length; i++) {
+for (let i = 0; i < 2; i++) {
     const btn = obj.btn;
     btn[i].addEventListener("click",function(){
             let Origin = location.origin + "/pages/selectedgame/"
@@ -14,7 +14,7 @@ for (let i = 0; i < obj.btn.length; i++) {
                     window.location.href = Origin + "gacha.html"
                     break;
                 case 1:
-                    window.location.href = Origin + "../games.html"
+                    window.location.href = Origin + "normalGames.html"
                     break;
             }
         }) 
