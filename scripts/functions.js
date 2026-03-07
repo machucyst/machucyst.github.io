@@ -40,11 +40,11 @@ export default{
               trigger: item,
               scroller: "#selection-grid",
               horizontal: true,
-              start: "left 100%",     // when item's left hits container's right
-              end: "left 75%",       // when item's right hits container's left
+              start: "left 110%",     // when item's left hits container's right
+              end: "left 80%",       // when item's right hits container's left
               scrub: true,
-              markers:bool,
-              // toggleActions: "restart pause reverse pause"
+              // markers:true,
+              toggleActions: "play none none reverse"
             },
           }
         );
@@ -59,14 +59,15 @@ export default{
               scroller: "#selection-grid",
               horizontal: true,
               start: "left 10%",     // when item's left hits container's right
-              end: "left -60%",       // when item's right hits container's left
+              end: "left -30%",       // when item's right hits container's left
               scrub: true,
-              markers:bool,
-              // toggleActions: "play pause reverse pause"
+              // markers:true,
+              toggleActions: "play none none reverse"
             },
           }
         )
       });
+      ScrollTrigger.refresh();
     },
     
     

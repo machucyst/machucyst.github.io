@@ -34,7 +34,7 @@
     margin-left: 5vw;
     margin-right: 5vw;
     background: #cea3f0;
-    background: linear-gradient(8deg, rgba(206, 163, 240, 1) 0%, rgba(222, 200, 221, 1) 50%, rgba(255, 247, 247, 1) 100%);
+    background: linear-gradient(8deg, #cea3f0 0%, hwb(303 79% 13%) 50%, #fff7f7 100%);
     margin-bottom: 2vh;
     min-height: 96vh;
     height: fit-content;
@@ -43,7 +43,7 @@
 }
 .mainContent #bts-grid div{
   justify-content: center;
-  align-items: end;
+  /* align-items: end; */
   display: flex;
   /* overflow: hidden; */
   border: black;

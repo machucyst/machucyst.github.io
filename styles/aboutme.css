@@ -6,6 +6,4 @@ div{
     
     overflow-x: hidden;
     transform-origin: top left;
-    /* flex-direction: row; */
-    /* display: flex; */
 }

@@ -11,7 +11,7 @@ const data = await ani.anime;
 const userData = data.User
 const animeData = data.animeList
 const mangaData = data.mangaList
-const txtborder = "-1px -1px 0 #464646,1px -1px 0 #464646,-1px  1px 0 #464646,1px  1px 0 #464646"
+const txtborder = "-2px -2px black,1px -1px 0 black,-1px  1px 0 black,1px  1px 0 black"
 
 let dataLists = []
 const grid = document.querySelector("#selection-grid");
@@ -38,12 +38,16 @@ switch (info) {
 try {
   if (dataLists[0]) grid.innerHTML = ""
   for (let i = 0; i < dataLists.length; i++) {
+     if ((info == "Anime" || info == "Manga")) addSeparator("../images/test-separator.gif",grid)
     Object.entries(dataLists[i]).forEach(([key, nodes]) => {
       switch (info) {
         case "Anime":
         case "Manga":
-          nodes = nodes.nodes
+          nodes = nodes.media
           break;
+        default:
+          // alert("Error")
+          break
       }
       const imgUrl = nodes.coverImage?.extraLarge
       const div = document.createElement('div')
@@ -53,8 +57,8 @@ try {
       div.classList.add("bts");
       div.classList.add("observe");
       div.style.backgroundImage = `url(${imgUrl})`;
-      div.addEventListener("mouseover", () => {
-        // div.style.backgroundImage = img2;
+      div.addEventListener("click", () => {
+        selectAnime(nodes)
       })
       div.addEventListener("mouseleave", () => {
         // div.style.backgroundImage = img;
@@ -74,25 +78,15 @@ try {
       div2.appendChild(subText)
 
       div.appendChild(div2)
-
       grid.appendChild(div)
-    })
-    if(info=="Favorite"){
 
-      if (i + 1 != dataLists.length) {
-        const div = document.createElement('div')
-        div.classList.add("observe");
-        div.classList.add("bts-separator");
-        const img = new Image()
-        img.src = "../images/separator.gif"
-        const div2 = document.createElement('div');
-        div2.classList.add("bts-contain");
-        div2.appendChild(img)
-        div.appendChild(div2)
-        grid.appendChild(div)
-      }
-    }Z
+    })
+    if (info == "Favorite" && i+1 != dataLists.length) addSeparator("../images/separator.gif",grid)
   }
+  grid.scrollLeft = grid.scrollWidth - grid.clientWidth
+  setTimeout(()=>{
+    grid.scrollLeft = 0;
+  },1)
 } catch (e) {
 
 }
@@ -127,16 +121,25 @@ bts.forEach((card) => {
   observer.observe(card)
 })
 
-function selectAnime(index) {
-  index++
-  const anime = ani.anime[index];
-  if (anime) {
-    window.location.href = location.origin + "/pages/selectedanime/selectedAnime.html?selected=" + `${anime.title}`
+function selectAnime(data) {
+  if (data) {
+    window.location.href = location.origin + "/pages/selectedanime/selectedAnime.html?selected=" + `${data.id}`
   } else {
-    console.log(`Anime with ID ${index} not found.`);
+    console.log(`Anime with ID ${data.id} not found.`);
   }
 }
-
+function addSeparator(image, parent){
+      const div = document.createElement('div')
+      div.classList.add("observe");
+      div.classList.add("bts-separator");
+      const img = new Image()
+      img.src = image
+      const div2 = document.createElement('div');
+      div2.classList.add("bts-contain");
+      div2.appendChild(img)
+      div.appendChild(div2)
+      parent.appendChild(div)
+}
 fn.enableScroll(false)
 let scrollVelocity = 0;
 let isScrolling = false;
@@ -144,7 +147,6 @@ let isScrolling = false;
 grid.addEventListener("wheel", function (e) {
   e.preventDefault();
   scrollVelocity += e.deltaY * 0.25;
-
   if (!isScrolling) {
     isScrolling = true;
     requestAnimationFrame(smoothScroll);
@@ -159,5 +161,6 @@ function smoothScroll() {
   } else {
     scrollVelocity = 0;
     isScrolling = false;
+    localStorage.setItem("gridScrollY",grid.scrollLeft)
   }
 }

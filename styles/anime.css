@@ -3,7 +3,7 @@
   user-select: none;        /* Standard */
   -webkit-user-select: none; /* Safari */
   -moz-user-select: none;   /* Firefox */
-  -ms-user-select: none;    /* IE10+ */
+  -ms-user-select: none;    /* IE10+ *ß
 }
 
 .clickable{
@@ -17,9 +17,9 @@
 #loading{
     margin-left: 50%;
     margin-top:auto;
-    margin-bottom:auto;
+    margin-bottom:auto;s
     img{
-        height: 400px;
+        height: 500px;
     }
     h2{
        margin-left: 50%;
@@ -31,6 +31,7 @@
     font-size: 2vh;
     margin-bottom: 0;
 }
+
 #selection-grid{
     overflow-x: auto;
     display: grid;
@@ -52,6 +53,7 @@
     border-radius: 0.44rem;
     border-width: 1vh;
     opacity: 0;
+    transform: translate(0px,-100px);
     transition: opacity 0.3s ease, transform 0.3s ease;
     width: 450px;
     height: auto;
@@ -97,12 +99,15 @@
 .mainText{
     font-size: clamp(1.5rem, 2vh, 2vh);
     transition: 0.3s;
-    color: black;
+    color: rgb(255, 255, 255);
+    text-shadow: -2px -2px black,1px -1px 0 black,-1px  1px 0 black,1px  1px 0 black;
 }
 .subText{
     font-size: clamp(1rem, 0.5vh, 1vh);
     transition: 0.3s;
     opacity: 0.8;
+    color: rgb(255, 255, 255);
+    text-shadow: -2px -2px black,1px -1px 0 black,-1px  1px 0 black,1px  1px 0 black;
 }
 @media (max-width:768px){
   #bts-grid{

@@ -52,8 +52,8 @@ overflow: hidden;
     width: 0;
     background: transparent;
 }
-#btnLeft{margin-right: auto;}
-#btnRight{margin-left: auto;}
+#btnLeft{margin-right: auto; width: 30%;height: 100%;}
+#btnRight{margin-left: auto;width: 30%;height: 100%;}
 .bts{
   background-color: #cea3f0;
   position: relative;
@@ -126,8 +126,8 @@ overflow: hidden;
   image-rendering: optimizeSpeed;
   align-self: center;
   width: auto;
-  height: auto;
-  max-height: 90%;
+  height: 30%;
+  max-height: 50%;
   max-width: 100%;
   position: relative;
   margin-right: auto;
@@ -140,6 +140,11 @@ overflow: hidden;
   margin: 0;
   height: 5%;
   align-items: center center;
+}
+#imageParent{
+  margin-bottom: auto;
+  margin-top: auto;
+
 }
 #selectedImage{
   position: absolute;
@@ -181,6 +186,7 @@ overflow: hidden;
   height: 100%;
   filter: blur(2px);
   position: absolute ;
+
   z-index: -1;
 }
 #antiblur{

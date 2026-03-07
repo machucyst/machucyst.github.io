@@ -36,6 +36,7 @@
   box-sizing: border-box;
   align-items: stretch;
   transition: 0.4s;
+  
 }
 .bts{
   background-color: #cea3f0;
@@ -65,8 +66,11 @@
 .mainContent{
     margin-left: 10vw;
     margin-right: 10vw;
+    
 }
-
+.mainContent #bts-grid .bts{
+align-items: end;
+ }
 
 @media (max-width:768px){
   #bts-grid{

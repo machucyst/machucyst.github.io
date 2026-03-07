@@ -2,10 +2,6 @@ import obj from '../elementItems.js';
 import fn from '../functions.js'
 import ani from './data.js'
 
-
-
-
-
 fn.toggleFunction(obj.headtext, "hover", "Anime", "return?")
 obj.headtext.addEventListener("click", function () {
   history.back()
@@ -35,7 +31,6 @@ for (let i = 0; i < btns.length; i++) {
       default:
         alert("Error")
         break;
-
     }
   })
 }
@@ -51,6 +46,7 @@ grid.addEventListener("wheel", function (e) {
     isScrolling = true;
     requestAnimationFrame(smoothScroll);
   }
+  
 });
 
 function smoothScroll() {

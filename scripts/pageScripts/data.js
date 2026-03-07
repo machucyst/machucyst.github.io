@@ -222,7 +222,8 @@ async function getFavorites() {
         lists{
            entries{
             status
-              nodes: media{
+              media{
+                id
                 title{
                   romaji
                   english
@@ -239,7 +240,8 @@ async function getFavorites() {
         lists{
           entries{
             status
-              nodes: media{
+              media{
+                id
                 title{
                   romaji
                   english
