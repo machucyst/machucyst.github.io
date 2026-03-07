@@ -69,7 +69,7 @@
     
 }
 .mainContent #bts-grid .bts{
-align-items: end;
+  align-items: end;
  }
 
 @media (max-width:768px){

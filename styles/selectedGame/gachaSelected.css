@@ -52,8 +52,26 @@ overflow: hidden;
     width: 0;
     background: transparent;
 }
-#btnLeft{margin-right: auto; width: 30%;height: 100%;}
-#btnRight{margin-left: auto;width: 30%;height: 100%;}
+
+#btnLeft{
+  margin-right: auto; 
+  width: 10%; 
+  height: 100%;
+  background-image: url(../../images/konata-dance.gif);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#btnRight{
+  margin-left: auto; 
+  width: 10%; 
+  height: 100%;
+  background-image: url(../../images/konata-dance.gif);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transform: scaleX(-1)
+}
 .bts{
   background-color: #cea3f0;
   position: relative;
@@ -124,17 +142,21 @@ overflow: hidden;
 }
 #imageSelection{
   image-rendering: optimizeSpeed;
-  align-self: center;
+  top: 0;
+  left: 0;
   width: auto;
-  height: 30%;
-  max-height: 50%;
-  max-width: 100%;
+  height: auto;
+  max-height: 100%;
   position: relative;
-  margin-right: auto;
-  margin-left: auto;
+
 }
 #imageDiv{
-  flex-direction: column;
+  border-width: 0px !important;
+  border-style: none;
+  background-color: rgba(0, 0, 0, 0.267);
+  padding: 1px;
+  padding-top: 1px !important;
+  height: 42vh
 }
 #bullets p{
   margin: 0;
@@ -144,7 +166,7 @@ overflow: hidden;
 #imageParent{
   margin-bottom: auto;
   margin-top: auto;
-
+  border-width: 0px !important;
 }
 #selectedImage{
   position: absolute;
@@ -162,14 +184,29 @@ overflow: hidden;
   transform: translate(10%,20%);
   position: absolute;
 }
-#blur2{
+#blur{
   height: 100%;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.712);
   position: absolute;
+  top:0;
+  left:0;
   z-index: 2;
   align-items: center center;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-position: center center !important;
+  filter: blur(4px);
+  position: absolute ;
+
+  z-index: -1;
+  div{
+    border-width: 0 !important;
+    size: 200px !important;
+  }
+  
 }
+
 #focusedImage{
   width: 70%;
   position: absolute;
@@ -178,23 +215,13 @@ overflow: hidden;
   left:0;
   transform: translate(20%,30%);
 }
-#blur{
-  background-position: center center !important;
-  background-size: cover;
-  background-repeat:  no-repeat;
-  width: 100%;
-  height: 100%;
-  filter: blur(2px);
-  position: absolute ;
 
-  z-index: -1;
-}
-#antiblur{
+/* #antiblur{
   filter: none;
   height: 90%;
   width: auto;
   place-self: center center;
-}
+} */
 #images{
   background-position: center center !important;
   background-repeat: no-repeat !important;

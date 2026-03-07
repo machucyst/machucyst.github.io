@@ -49,6 +49,8 @@ try {
           // alert("Error")
           break
       }
+      let img = new Image()
+      img.src = nodes.coverImage?.extraLarge;
       const imgUrl = nodes.coverImage?.extraLarge
       const div = document.createElement('div')
       const div2 = document.createElement('div');
@@ -56,7 +58,10 @@ try {
       const subText = document.createElement('p');
       div.classList.add("bts");
       div.classList.add("observe");
-      div.style.backgroundImage = `url(${imgUrl})`;
+      div.style.backgroundImage= `url(../../images/konata-dance.gif)`
+      img.onload = ()=>{
+        div.style.backgroundImage = `url(${imgUrl})`;
+      }
       div.addEventListener("click", () => {
         selectAnime(nodes)
       })
