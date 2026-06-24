@@ -1,3 +1,5 @@
+let placeholder = "../../../ph.webp"
+let placeholder2 = "../../../ph2.webp"
 export default {
   anime: getFavorites(),
   games: {
@@ -28,12 +30,7 @@ export default {
           image: "Reines.webp",
           name: "Sima Yi (Reines)",
         },
-        images: {
-          1: "fgo1.webp ",
-          2: "fgo2.webp",
-          3: "fgo3.webp",
-          4: "fgo4.webp",
-        },
+        images: await getImages("fgo"),
         desc: "I have over 1850 logins, i could be investing my life somewhere else but whatever. NP6 Reines in the span of 4 years. I'm aiming for typhon lads raaaaaaaaah",
       },
       2: {
@@ -46,10 +43,7 @@ export default {
           image: "NiceNature.webp",
           name: "Nice Nature",
         },
-        images: {
-          1: "uma1.webp",
-          2: "uma2.webp"
-        },
+        images: await getImages("uma"),
         desc: "i have the played jp before global card yip.",
       },
       3: {
@@ -59,32 +53,24 @@ export default {
         uid: "1889581",
         imageDir: "ba",
         favorite: {
-          image: "Aoba.webp",
-          name: "Aoba",
+          image: "Kei.webp",
+          name: "Kei",
         },
-        images: {
-          1: "ba1.webp",
-          2: "ba2.webp",
-          3: "ba4.webp",
-          4: "ba3.webp"
-        },
-        desc: "no i do not do the funny emoji shenanigans",
+        images: await getImages("ba"),
+        desc: "Tsunderes are life, they are the light at the end of the tunnel. The Salvation everyone desires, when you are lost you look for Kei, when you are suffering you glee for Kei, when you are in pain you heal with Kei. Tsunderes are the soft spot of every being out there, honest not with their words but with their hearts. The journey is not the endpoint but the road, Indirectiveness brings forth many forks in the road, with many forks come many experiences. Tsunderes for life, Tsunderes for all.",
       },
       4: {
         thumbnail: "hsr-d.webp",
         title: "Honkai: Star Rail",
         color: "white",
-        uid: "ID",
+        uid: "801140261",
         imageDir: "hsr",
         favorite: {
-          image: "url",
-          name: "Seele",
+          image: "SilverWolf.webp",
+          name: "Silver Wolf",
         },
-        images: {
-          1: "../../../ph.webp ",
-          2: "../../../ph2.webp "
-        },
-        desc: "i quit, and ill come back after a while to see if i can still do the endgames",
+        images: await getImages("hsr"),
+        desc: "they really put an SW alt and thought they could get away with it",
       },
       5: {
         thumbnail: "tbc-d.webp",
@@ -96,9 +82,7 @@ export default {
           image: "kasli.webp",
           name: "Kasli the Scourge",
         },
-        images: {
-          1: "bc1.webp ",
-        },
+        images: await getImages("bc"),
         desc: "i lost my account for 7 yrs i managed to get it back using the power of friendship with people i dont talk to anymore",
       },
       6: {
@@ -111,10 +95,7 @@ export default {
           image: "Irene.webp",
           name: "Irene",
         },
-        images: {
-          1: "../../../ph.webp ",
-          2: "../../../ph2.webp "
-        },
+        images: [placeholder,placeholder2],
         desc: "i advocate for tower offense meta",
       },
       7: {
@@ -127,10 +108,7 @@ export default {
           image: "Cheyanne.webp",
           name: "Cheyanne"
         },
-        images: {
-          1: "gfle1.webp ",
-          2: "../../../ph2.webp "
-        },
+        images: await getImages("gfle"),
         desc: "i dont think ill resist the urge to not pay for cheyanne's skin"
 
       },
@@ -144,14 +122,10 @@ export default {
           image: "Tyrant.webp",
           name: "Tyrant"
         },
-        images: {
-          1: "ss1.webp",
-          2: "ss3.webp",
-          3: "ss2.webp",
-        },
+        images: await getImages("ss"),
         desc: "trying it out, seems fun",
       },
-      8: {
+      9: {
         thumbnail: "ake-ddd.png",
         title: "Arknights: Endfield",
         color: "gray",
@@ -162,18 +136,62 @@ export default {
           name: "Endmin",
         },
         desc: "THE FACTORY MUST GROWWWWWWWWWWWWWWW",
-        images: {
-          1: "ake1.webp",
-          2: "../../../ph2.webp"
-        }
-      }
+        images: await getImages("ake")
+      },
+      10: {
+        thumbnail: "stas-ddd.png",
+        title: "Star Savior",
+        color: "#545ee9",
+        uid: "51203797170",
+        imageDir: "stas",
+        favorite: {
+          image: "BelleRhys.webp",
+          name: "Belle Rhys",
+        },
+        desc: "I am addicted to gambling",
+        images: await getImages("stas")
+      },
+      11:{
+        thumbnail: "",
+        title: "Counter:Side",
+        color: "#4b100c",
+        uid: "4717627",
+        imageDir: "cs",
+        favorite: {
+          image:"Christina.webp",
+          name: "Christina Brecht"
+        },
+        desc: "Horizon Finance is such a great sub-story. Such a shame the game went EOS",
+        images: await getImages("cs")
+      },
     }
   },
 
 }
 
+async function getImages(dirName){
+ 
+  const images = [];
+  let i = 1;
 
-
+  while (true) {
+    const url = `../../../../images/Games/Gacha/${dirName}/${dirName}${i}.webp`;
+    try{
+      const res = await fetch(url, { method: 'HEAD' }); // HEAD is faster, no need to download the image
+      
+      if (!res.ok) break; // 404 = stop
+      
+      images.push(`${dirName}${i}.webp`);
+      i++;
+    }
+    catch (error){
+      console.log("images found: ="+i-1)
+      break;
+    }
+    }
+    // console.log(images)
+    return images;
+}
 
 async function getFavorites() {
   const query = `

@@ -58,7 +58,7 @@ try {
       const subText = document.createElement('p');
       div.classList.add("bts");
       div.classList.add("observe");
-      div.style.backgroundImage= `url(../../images/konata-dance.gif)`
+      div.style.backgroundImage= `url(${location.origin}/images/konata-dance.gif)`
       img.onload = ()=>{
         div.style.backgroundImage = `url(${imgUrl})`;
       }
@@ -86,7 +86,7 @@ try {
       grid.appendChild(div)
 
     })
-    if (info == "Favorite" && i+1 != dataLists.length) addSeparator("../images/separator.gif",grid)
+    if (info == "Favorite" && i+1 != dataLists.length) addSeparator(`${location.origin}/images/separator.gif`,grid)
   }
   grid.scrollLeft = grid.scrollWidth - grid.clientWidth
   setTimeout(()=>{

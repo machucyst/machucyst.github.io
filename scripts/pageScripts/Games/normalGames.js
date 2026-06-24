@@ -22,7 +22,7 @@ async function loadElements(){
         div.addEventListener("click",function(){
             window.location.href = Origin + "normalSelected.html?selected="+key
         })
-        div.style.backgroundImage = `url(../../images/Games/Normal/${item.imageDir}/${item.thumbnail})`
+        div.style.backgroundImage = `url(${location.origin}/images/Games/Normal/${item.imageDir}/${item.thumbnail})`
         const p = document.createElement('p');
         p.classList.add('btnHead');
         p.textContent = item.title
